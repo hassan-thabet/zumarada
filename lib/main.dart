@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:zumarada/bloc/onboarding/bloc.dart';
+import 'package:zumarada/screens/login/login_screen.dart';
+import 'package:zumarada/screens/onboarding/onboarding_screen.dart';
 import 'package:zumarada/screens/splash/splash_screen.dart';
-
 import 'constants/my_colors.dart';
 
 
@@ -62,6 +63,12 @@ class MyApp extends StatelessWidget {
 
           ),
         ),
+        initialRoute: 'SplashScreen',
+        routes: {
+          'SplashScreen': (context) => SplashScreen(),
+          'OnBoardingScreen': (context) => OnBoardingScreen(),
+          'LoginScreen': (context) => LoginScreen(),
+        },
       ),
     );
   }

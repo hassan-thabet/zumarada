@@ -78,7 +78,7 @@ class OnBoardingScreen extends StatelessWidget {
 
                               onTap: ()
                               {
-
+                                Navigator.pushReplacementNamed(context, 'LoginScreen');
                               }
                             )
                           : InkWell(
