@@ -40,6 +40,10 @@ flutter:
       fonts:
         - asset: assets/fonts/Glory-Regular.ttf
 
+    - family: Pattaya
+      fonts:
+        - asset: assets/fonts/Pattaya-Regular.ttf
+
     - family: Ubuntu
       fonts:
         - asset: assets/fonts/Ubuntu-Regular.ttf

@@ -20,24 +20,27 @@ class OnBoardingScreen extends StatelessWidget {
                 height: height * 0.90,
                 child: PageView(
                   controller: OnBoardingBloc.get(context).controller,
-                  onPageChanged: (index){
+                  onPageChanged: (index) {
                     OnBoardingBloc.get(context).onPageChange(index);
                   },
                   children: <Widget>[
                     SinglePageView(
-                        title: 'OnBoarding first title',
-                        description: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,',
-                        imagePath: 'assets/images/on3.png',
+                      title: 'OnBoarding first title',
+                      description:
+                          'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,',
+                      imagePath: 'assets/images/on3.png',
                     ),
                     SinglePageView(
-                        title: 'OnBoarding second title',
-                        description: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. ',
-                        imagePath: 'assets/images/on3.png',
+                      title: 'OnBoarding second title',
+                      description:
+                          'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. ',
+                      imagePath: 'assets/images/on3.png',
                     ),
                     SinglePageView(
-                        title: 'OnBoarding Third title',
-                        description: 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.',
-                        imagePath: 'assets/images/on3.png',
+                      title: 'OnBoarding Third title',
+                      description:
+                          'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.',
+                      imagePath: 'assets/images/on3.png',
                     ),
                   ],
                 ),
@@ -54,18 +57,18 @@ class OnBoardingScreen extends StatelessWidget {
                         padding: const EdgeInsets.all(8.0),
                         child: Row(
                           children: [
-                            Indicator((OnBoardingBloc.get(context).pageIndex == 0)
-                                ? true
-                                : false
-                            ),
-                            Indicator((OnBoardingBloc.get(context).pageIndex == 1)
-                                ? true
-                                : false
-                            ),
-                            Indicator((OnBoardingBloc.get(context).pageIndex == 2)
-                                ? true
-                                : false
-                            ),
+                            Indicator(
+                                (OnBoardingBloc.get(context).pageIndex == 0)
+                                    ? true
+                                    : false),
+                            Indicator(
+                                (OnBoardingBloc.get(context).pageIndex == 1)
+                                    ? true
+                                    : false),
+                            Indicator(
+                                (OnBoardingBloc.get(context).pageIndex == 2)
+                                    ? true
+                                    : false),
                           ],
                         ),
                       ),
@@ -73,27 +76,24 @@ class OnBoardingScreen extends StatelessWidget {
                           ? InkWell(
                               child: Padding(
                                 padding: const EdgeInsets.all(8.0),
-                                child: Text('DONE' , style: Theme.of(context).textTheme.button),
+                                child: Text('DONE',
+                                    style: Theme.of(context).textTheme.button),
                               ),
-
-                              onTap: ()
-                              {
-                                Navigator.pushReplacementNamed(context, 'LoginScreen');
-                              }
-                            )
+                              onTap: () {
+                                Navigator.pushReplacementNamed(
+                                    context, 'SingupScreen');
+                              })
                           : InkWell(
                               child: Padding(
                                 padding: const EdgeInsets.all(8.0),
-                                child: Text('NEXT' , style: Theme.of(context).textTheme.button),
+                                child: Text('NEXT',
+                                    style: Theme.of(context).textTheme.button),
                               ),
-                              onTap: ()
-                              {
+                              onTap: () {
                                 OnBoardingBloc.get(context).nextPageChange(
-                                    OnBoardingBloc.get(context).pageIndex
-                                );
+                                    OnBoardingBloc.get(context).pageIndex);
                               },
                             ),
-
                     ],
                   ),
                 ),
