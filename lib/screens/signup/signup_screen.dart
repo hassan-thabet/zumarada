@@ -11,7 +11,11 @@ class SignupScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<SignUpBloc, SignupStates>(
-      listener: (context, state) {},
+      listener: (context, state) {
+        if (state is SignupWithGoogleSuccess) {
+          Navigator.pushReplacementNamed(context, 'HomeScreen');
+        }
+      },
       builder: (context, state) {
         return Scaffold(
           resizeToAvoidBottomInset: false,
@@ -83,24 +87,35 @@ class SignupScreen extends StatelessWidget {
                   onTap: () {},
                   color: BUTTON_COLOR,
                 ),
-                Row(children: <Widget>[
+                Row(children: [
                   Expanded(
                       child: Divider(
                     color: Colors.black,
                     height: 36,
                   )),
-                  const Text('   OR   '),
+                  Text(
+                    ' Or sign up with ',
+                    style: Theme.of(context)
+                        .textTheme
+                        .bodyText1!
+                        .copyWith(fontSize: 16),
+                  ),
                   Expanded(
                       child: Divider(
                     color: Colors.black,
                     height: 36,
                   )),
                 ]),
+                SizedBox(
+                  height: 10,
+                ),
                 CustomButton(
-                  text: 'Continue with Google',
+                  text: 'Connect with Google',
                   width: double.infinity,
-                  onTap: () {},
-                  color: Color(0xffdb3236),
+                  onTap: () {
+                    SignUpBloc.get(context).signInWithGoogle();
+                  },
+                  color: Colors.redAccent,
                 ),
                 SizedBox(height: 6),
                 Expanded(

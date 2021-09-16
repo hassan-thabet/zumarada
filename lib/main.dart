@@ -1,8 +1,10 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:zumarada/bloc/onboarding/bloc.dart';
 import 'package:zumarada/bloc/signup/bloc.dart';
+import 'package:zumarada/screens/home/home_screen.dart';
 import 'package:zumarada/screens/login/login_screen.dart';
 import 'package:zumarada/screens/onboarding/onboarding_screen.dart';
 import 'package:zumarada/screens/signup/signup_screen.dart';
@@ -10,8 +12,9 @@ import 'package:zumarada/screens/splash/splash_screen.dart';
 
 import 'constants/my_colors.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
 
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
     statusBarColor: SCAFFOLD_BACKGROUND_COLOR,
@@ -83,6 +86,7 @@ class MyApp extends StatelessWidget {
           'OnBoardingScreen': (context) => OnBoardingScreen(),
           'LoginScreen': (context) => LoginScreen(),
           'SignUpScreen': (context) => SignupScreen(),
+          'HomeScreen': (context) => HomeScreen(),
         },
       ),
     );

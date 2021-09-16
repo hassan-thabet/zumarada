@@ -80,11 +80,12 @@ class LoginScreen extends StatelessWidget {
                   SizedBox(
                     height: 20,
                   ),
-                  Row(
+                  Expanded(
+                      child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        'Already have an account ?',
+                        'Don\'t have an account ?',
                         style: Theme.of(context).textTheme.button,
                       ),
                       SizedBox(
@@ -95,15 +96,15 @@ class LoginScreen extends StatelessWidget {
                           Navigator.pushNamed(context, 'SignUpScreen');
                         },
                         child: Text(
-                          'Singup',
+                          'Sign Up',
                           style: Theme.of(context)
                               .textTheme
                               .button!
                               .copyWith(color: BUTTON_COLOR),
                         ),
-                      )
+                      ),
                     ],
-                  )
+                  )),
                 ],
               ),
             ),
