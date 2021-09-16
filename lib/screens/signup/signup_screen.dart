@@ -64,7 +64,9 @@ class SignupScreen extends StatelessWidget {
                 ),
                 CustomTextField(
                   keyboardType: TextInputType.visiblePassword,
-                  suffixIconData: Icons.visibility,
+                  suffixIconData: SignUpBloc.get(context).passwordSecure == true
+                      ? Icons.visibility_off
+                      : Icons.visibility,
                   visibilityOnTap: () {
                     SignUpBloc.get(context).changVisibilityState();
                   },
@@ -112,12 +114,17 @@ class SignupScreen extends StatelessWidget {
                     SizedBox(
                       width: 4,
                     ),
-                    Text(
-                      'Login',
-                      style: Theme.of(context)
-                          .textTheme
-                          .button!
-                          .copyWith(color: BUTTON_COLOR),
+                    TextButton(
+                      onPressed: () {
+                        Navigator.pushNamed(context, 'LoginScreen');
+                      },
+                      child: Text(
+                        'Login',
+                        style: Theme.of(context)
+                            .textTheme
+                            .button!
+                            .copyWith(color: BUTTON_COLOR),
+                      ),
                     ),
                   ],
                 )),
