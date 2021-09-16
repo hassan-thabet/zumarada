@@ -81,7 +81,7 @@ class OnBoardingScreen extends StatelessWidget {
                               ),
                               onTap: () {
                                 Navigator.pushReplacementNamed(
-                                    context, 'SingupScreen');
+                                    context, 'SignUpScreen');
                               })
                           : InkWell(
                               child: Padding(

@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "121923859854",
+    "project_id": "zumarada-28bd8",
+    "storage_bucket": "zumarada-28bd8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:121923859854:android:b40a8d143a7fd6738560df",
+        "android_client_info": {
+          "package_name": "com.globalapp.zumarada"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "121923859854-ahnp2fk47gsultqdp5emki36f2nnegk2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.globalapp.zumarada",
+            "certificate_hash": "2ffcf193174a0b3224f7144b459303c0e36c546e"
+          }
+        },
+        {
+          "client_id": "121923859854-g7u8aj61v2j02ofpsqp2ch1a3jq80e76.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDf9rf28IiYbA0h2C_11dOkC9NhNkpgl5g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "121923859854-g7u8aj61v2j02ofpsqp2ch1a3jq80e76.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

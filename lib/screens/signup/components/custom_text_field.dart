@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class MyTextField extends StatelessWidget {
+class CustomTextField extends StatelessWidget {
   final String hint;
   final TextInputType keyboardType;
   final TextEditingController controller;
@@ -9,7 +9,7 @@ class MyTextField extends StatelessWidget {
   final IconData? suffixIconData;
   final VoidCallback? visibilityOnTap;
 
-  MyTextField({
+  CustomTextField({
     required this.hint,
     required this.controller,
     required this.isSecure,

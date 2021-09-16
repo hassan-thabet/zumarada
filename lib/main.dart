@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:zumarada/bloc/onboarding/bloc.dart';
+import 'package:zumarada/bloc/signup/bloc.dart';
 import 'package:zumarada/screens/login/login_screen.dart';
 import 'package:zumarada/screens/onboarding/onboarding_screen.dart';
-import 'package:zumarada/screens/singup/singup_screen.dart';
+import 'package:zumarada/screens/signup/signup_screen.dart';
 import 'package:zumarada/screens/splash/splash_screen.dart';
+
 import 'constants/my_colors.dart';
 
 void main() {
@@ -29,6 +31,7 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (context) => OnBoardingBloc()),
+        BlocProvider(create: (context) => SignUpBloc()),
       ],
       child: MaterialApp(
         home: SplashScreen(),
@@ -41,7 +44,7 @@ class MyApp extends StatelessWidget {
               elevation: 0,
               backgroundColor: SCAFFOLD_BACKGROUND_COLOR,
               iconTheme: IconThemeData(
-                color: Botten_Color,
+                color: BUTTON_COLOR,
               )),
           textTheme: TextTheme(
             headline1: TextStyle(
@@ -54,7 +57,7 @@ class MyApp extends StatelessWidget {
               fontFamily: 'Pattaya',
               fontWeight: FontWeight.w300,
               fontSize: 40,
-              color: Botten_Color,
+              color: BUTTON_COLOR,
             ),
             subtitle1: TextStyle(
               fontFamily: 'Glory',
@@ -79,7 +82,7 @@ class MyApp extends StatelessWidget {
           'SplashScreen': (context) => SplashScreen(),
           'OnBoardingScreen': (context) => OnBoardingScreen(),
           'LoginScreen': (context) => LoginScreen(),
-          'SingupScreen': (context) => SingupScreen(),
+          'SignUpScreen': (context) => SignupScreen(),
         },
       ),
     );

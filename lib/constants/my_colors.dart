@@ -8,4 +8,4 @@ const DEEP_BLACK_COLOR = Color(0xFF363636);
 
 const SCAFFOLD_BACKGROUND_COLOR = Color(0xFFFCF7F1);
 
-const Botten_Color = Color(0xFF492927);
+const BUTTON_COLOR = Color(0xFF492927);
