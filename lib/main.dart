@@ -4,7 +4,6 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:zumarada/bloc/onboarding/bloc.dart';
 import 'package:zumarada/bloc/signup/bloc.dart';
-import 'package:zumarada/screens/home/home_screen.dart';
 import 'package:zumarada/screens/login/login_screen.dart';
 import 'package:zumarada/screens/onboarding/onboarding_screen.dart';
 import 'package:zumarada/screens/signup/signup_screen.dart';
@@ -40,6 +39,10 @@ class MyApp extends StatelessWidget {
         home: SplashScreen(),
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
+          bottomNavigationBarTheme: BottomNavigationBarThemeData(
+              elevation: 1,
+              backgroundColor: Colors.white,
+              selectedIconTheme: IconThemeData(color: BUTTON_COLOR)),
           primarySwatch: Colors.grey,
           platform: TargetPlatform.iOS,
           scaffoldBackgroundColor: SCAFFOLD_BACKGROUND_COLOR,
@@ -86,7 +89,6 @@ class MyApp extends StatelessWidget {
           'OnBoardingScreen': (context) => OnBoardingScreen(),
           'LoginScreen': (context) => LoginScreen(),
           'SignUpScreen': (context) => SignupScreen(),
-          'HomeScreen': (context) => HomeScreen(),
         },
       ),
     );
