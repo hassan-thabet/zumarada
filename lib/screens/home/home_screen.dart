@@ -22,6 +22,10 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
           ],
+      body: Center(
+        child: Text(
+          'Home screen',
+          style: Theme.of(context).textTheme.subtitle1,
         ),
       ),
     );
