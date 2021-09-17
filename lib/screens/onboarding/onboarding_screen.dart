@@ -80,7 +80,8 @@ class OnBoardingScreen extends StatelessWidget {
                                     style: Theme.of(context).textTheme.button),
                               ),
                               onTap: () {
-                                Navigator.pushReplacementNamed(context, 'Home');
+                                Navigator.pushReplacementNamed(
+                                    context, 'HomeScreen');
                               })
                           : InkWell(
                               child: Padding(

@@ -1,33 +1,40 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:zumarada/bloc/home/bloc.dart';
+import 'package:zumarada/bloc/home/states.dart';
 
 class HomeScreen extends StatelessWidget {
+  final List<BottomNavigationBarItem> bottomNavBarItems = [
+    BottomNavigationBarItem(
+        icon: Icon(
+          Icons.home_outlined,
+        ),
+        label: 'home'),
+    BottomNavigationBarItem(icon: Icon(Icons.search), label: 'search'),
+    BottomNavigationBarItem(
+        icon: Icon(Icons.shopping_bag_outlined), label: 'Cart'),
+    BottomNavigationBarItem(
+        icon: Icon(Icons.favorite_border_sharp), label: 'Favorite'),
+    BottomNavigationBarItem(
+        icon: Icon(Icons.person_outline_rounded), label: 'Profile'),
+  ];
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(10.0),
-        child: Column(
-          children: [
-            Container(
-              width: double.infinity,
-              decoration:
-                  BoxDecoration(borderRadius: BorderRadius.circular(20)),
-              clipBehavior: Clip.antiAlias,
-              child: Card(
-                elevation: 5,
-                child: Image(
-                  image: NetworkImage(
-                      'https://images.pexels.com/photos/4540077/pexels-photo-4540077.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'),
-                ),
-              ),
-            ),
-          ],
-      body: Center(
-        child: Text(
-          'Home screen',
-          style: Theme.of(context).textTheme.subtitle1,
-        ),
-      ),
-    );
+    return BlocConsumer<HomeBloc, HomeStates>(
+        listener: (context, state) {},
+        builder: (context, state) {
+          return Scaffold(
+            body: HomeBloc.get(context)
+                .screensList[HomeBloc.get(context).currentTab],
+            bottomNavigationBar: BottomNavigationBar(
+                items: bottomNavBarItems,
+                currentIndex: HomeBloc.get(context).currentTab,
+                type: BottomNavigationBarType.fixed,
+                onTap: (index) {
+                  HomeBloc.get(context).changeIndex(index);
+                }),
+          );
+        });
   }
 }

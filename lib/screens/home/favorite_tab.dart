@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class Bage extends StatelessWidget {
+class FavoriteTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Text('bag'),
+      body: Center(child: Text('favorite')),
     );
   }
 }

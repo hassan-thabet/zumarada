@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class Sersh extends StatelessWidget {
+class SearchTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Text('saersh'),
+      body: Center(child: Text('search tab ')),
     );
   }
 }

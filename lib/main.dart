@@ -2,8 +2,10 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:zumarada/bloc/home/bloc.dart';
 import 'package:zumarada/bloc/onboarding/bloc.dart';
 import 'package:zumarada/bloc/signup/bloc.dart';
+import 'package:zumarada/screens/home/home_screen.dart';
 import 'package:zumarada/screens/login/login_screen.dart';
 import 'package:zumarada/screens/onboarding/onboarding_screen.dart';
 import 'package:zumarada/screens/signup/signup_screen.dart';
@@ -34,6 +36,7 @@ class MyApp extends StatelessWidget {
       providers: [
         BlocProvider(create: (context) => OnBoardingBloc()),
         BlocProvider(create: (context) => SignUpBloc()),
+        BlocProvider(create: (context) => HomeBloc()),
       ],
       child: MaterialApp(
         home: SplashScreen(),
@@ -89,6 +92,7 @@ class MyApp extends StatelessWidget {
           'OnBoardingScreen': (context) => OnBoardingScreen(),
           'LoginScreen': (context) => LoginScreen(),
           'SignUpScreen': (context) => SignupScreen(),
+          'HomeScreen': (context) => HomeScreen(),
         },
       ),
     );

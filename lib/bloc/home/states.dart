@@ -1,5 +1,5 @@
-abstract class HomStates {}
+abstract class HomeStates {}
 
-class HomeInitialStat extends HomStates {}
+class HomeInitialStat extends HomeStates {}
 
-class BottomNavigonBarStat extends HomStates {}
+class TabBarChangeState extends HomeStates {}
