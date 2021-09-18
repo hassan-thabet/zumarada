@@ -22,6 +22,7 @@ dependencies:
   firebase_core: ^1.6.0
   firebase_auth: ^3.1.1
   google_sign_in: ^5.1.0
+  smooth_page_indicator: ^1.0.0+2
 
 dev_dependencies:
   flutter_test:
@@ -59,3 +60,7 @@ flutter:
     - family: Sacramento
       fonts:
         - asset: assets/fonts/Sacramento-Regular.ttf
+
+    - family: PlayfairDisplay
+      fonts:
+        - asset: assets/fonts/PlayfairDisplay-VariableFont_wght.ttf

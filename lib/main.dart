@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:zumarada/bloc/home/bloc.dart';
+import 'package:zumarada/bloc/homeBloc/bloc.dart';
 import 'package:zumarada/bloc/onboarding/bloc.dart';
 import 'package:zumarada/bloc/signup/bloc.dart';
 import 'package:zumarada/screens/home/home_screen.dart';
@@ -37,15 +38,20 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (context) => OnBoardingBloc()),
         BlocProvider(create: (context) => SignUpBloc()),
         BlocProvider(create: (context) => HomeBloc()),
+        BlocProvider(create: (context) => HomeTabBloc()),
       ],
       child: MaterialApp(
         home: SplashScreen(),
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
           bottomNavigationBarTheme: BottomNavigationBarThemeData(
-              elevation: 1,
-              backgroundColor: Colors.white,
-              selectedIconTheme: IconThemeData(color: BUTTON_COLOR)),
+            elevation: 0,
+            backgroundColor: Colors.white,
+            selectedIconTheme: IconThemeData(color: BUTTON_COLOR, size: 38),
+            selectedLabelStyle: TextStyle(color: BUTTON_COLOR, fontSize: 10),
+            showSelectedLabels: false,
+            selectedItemColor: BUTTON_COLOR,
+          ),
           primarySwatch: Colors.grey,
           platform: TargetPlatform.iOS,
           scaffoldBackgroundColor: SCAFFOLD_BACKGROUND_COLOR,
@@ -67,6 +73,11 @@ class MyApp extends StatelessWidget {
               fontWeight: FontWeight.w300,
               fontSize: 40,
               color: BUTTON_COLOR,
+            ),
+            headline3: TextStyle(
+              fontFamily: 'PlayfairDisplay',
+              fontSize: 28,
+              color: DEEP_BLACK_COLOR,
             ),
             subtitle1: TextStyle(
               fontFamily: 'Glory',
