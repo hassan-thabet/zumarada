@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:zumarada/bloc/home/bloc.dart';
-import 'package:zumarada/bloc/homeBloc/bloc.dart';
 import 'package:zumarada/bloc/onboarding/bloc.dart';
 import 'package:zumarada/bloc/signup/bloc.dart';
 import 'package:zumarada/screens/home/home_screen.dart';
@@ -12,6 +11,7 @@ import 'package:zumarada/screens/onboarding/onboarding_screen.dart';
 import 'package:zumarada/screens/signup/signup_screen.dart';
 import 'package:zumarada/screens/splash/splash_screen.dart';
 
+import 'bloc/home/home_tab/bloc.dart';
 import 'constants/my_colors.dart';
 
 void main() async {
@@ -38,18 +38,22 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (context) => OnBoardingBloc()),
         BlocProvider(create: (context) => SignUpBloc()),
         BlocProvider(create: (context) => HomeBloc()),
-        BlocProvider(create: (context) => HomeTabBloc()),
+        BlocProvider(
+            create: (context) => HomeTabBloc()
+              ..getProducts()
+              ..getBrands()),
       ],
       child: MaterialApp(
         home: SplashScreen(),
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
           bottomNavigationBarTheme: BottomNavigationBarThemeData(
-            elevation: 0,
+            elevation: 4,
             backgroundColor: Colors.white,
-            selectedIconTheme: IconThemeData(color: BUTTON_COLOR, size: 38),
-            selectedLabelStyle: TextStyle(color: BUTTON_COLOR, fontSize: 10),
+            //selectedIconTheme: IconThemeData(color: BUTTON_COLOR, size: 38),
+            //selectedLabelStyle: TextStyle(color: BUTTON_COLOR, fontSize: 10),
             showSelectedLabels: false,
+            showUnselectedLabels: false,
             selectedItemColor: BUTTON_COLOR,
           ),
           primarySwatch: Colors.grey,
