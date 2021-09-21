@@ -12,9 +12,11 @@ class HomeTabBloc extends Cubit<HomeTabStates> {
   static HomeTabBloc get(context) => BlocProvider.of(context);
 
   var pageController = PageController();
+  bool buttemfavorit = true;
 
   List<Brand> brands = [];
   List<Product> products = [];
+  Map<int, bool> favorits = {};
 
   void getBrands() {
     FirebaseFirestore.instance.collection('brands').get().then((value) {
@@ -24,6 +26,11 @@ class HomeTabBloc extends Cubit<HomeTabStates> {
       print('brands fetched successfully');
       emit((HomeTabGetBrandsState()));
     });
+  }
+
+  void buttemFavorit() {
+    buttemfavorit = !buttemfavorit;
+    emit(HomeTabButtemFavorit());
   }
 
   void getProducts() {

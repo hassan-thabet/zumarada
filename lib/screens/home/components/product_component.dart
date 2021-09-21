@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:zumarada/bloc/home/home_tab/bloc.dart';
 import 'package:zumarada/models/product.dart';
 
 class ProductComponent extends StatelessWidget {
   late final Product product;
+  final VoidCallback favoritonTab;
 
-  ProductComponent({required this.product});
+  ProductComponent({required this.product, required this.favoritonTab});
 
   @override
   Widget build(BuildContext context) {
@@ -27,11 +29,13 @@ class ProductComponent extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 6),
-              child: Text(
-                product.title,
-                maxLines: 2,
-                style: Theme.of(context).textTheme.bodyText1,
-              ),
+              child: Text(product.title,
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                  style: Theme.of(context)
+                      .textTheme
+                      .bodyText1!
+                      .copyWith(fontSize: 15)),
             ),
             // SizedBox(
             //   height: 5,
@@ -49,7 +53,11 @@ class ProductComponent extends StatelessWidget {
                     product.price + ' EGP',
                     style: Theme.of(context).textTheme.bodyText1,
                   ),
-                  Icon(Icons.favorite_border)
+                  IconButton(
+                      onPressed: favoritonTab,
+                      icon: HomeTabBloc.get(context).buttemfavorit == true
+                          ? Icon(Icons.favorite)
+                          : Icon(Icons.favorite_border))
                 ],
               ),
             ),
