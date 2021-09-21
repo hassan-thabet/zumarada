@@ -112,13 +112,17 @@ class HomeTab extends StatelessWidget {
                       ],
                     ),
                     Container(
-                        height: 275,
+                        height: 291,
                         child: ListView.builder(
                             scrollDirection: Axis.horizontal,
                             itemCount: HomeTabBloc.get(context).products.length,
                             itemBuilder: (context, index) => ProductComponent(
-                                product:
-                                    HomeTabBloc.get(context).products[index]))),
+                                  product:
+                                      HomeTabBloc.get(context).products[index],
+                                  favoritonTab: () {
+                                    HomeTabBloc.get(context).buttemFavorit();
+                                  },
+                                ))),
                     SizedBox(
                       height: 25,
                     ),
@@ -138,13 +142,18 @@ class HomeTab extends StatelessWidget {
                       ],
                     ),
                     Container(
-                        height: 275,
+                        height: 291,
                         child: ListView.builder(
                             scrollDirection: Axis.horizontal,
                             itemCount: HomeTabBloc.get(context).products.length,
                             itemBuilder: (context, index) => ProductComponent(
-                                product:
-                                    HomeTabBloc.get(context).products[index]))),
+                                  product:
+                                      HomeTabBloc.get(context).products[index],
+                                  favoritonTab: () {
+                                    HomeTabBloc.get(context).buttemFavorit();
+                                    print(index);
+                                  },
+                                ))),
                   ],
                 ),
               ),
