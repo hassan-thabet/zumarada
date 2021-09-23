@@ -7,8 +7,6 @@ import 'package:zumarada/screens/signup/components/custom_button.dart';
 import 'package:zumarada/screens/signup/components/custom_text_field.dart';
 
 class LoginScreen extends StatelessWidget {
-  const LoginScreen({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return BlocProvider(

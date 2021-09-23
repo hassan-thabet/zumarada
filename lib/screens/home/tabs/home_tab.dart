@@ -10,8 +10,7 @@ import 'package:zumarada/screens/home/components/product_component.dart';
 class HomeTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    double height = MediaQuery.of(context).size.height;
-
+    Size size = MediaQuery.of(context).size;
     return BlocConsumer<HomeTabBloc, HomeTabStates>(
         listener: (context, stat) {},
         builder: (context, stat) {
@@ -32,7 +31,7 @@ class HomeTab extends StatelessWidget {
                               decoration: BoxDecoration(),
                               clipBehavior: Clip.antiAlias,
                               width: double.infinity,
-                              height: height * 0.40,
+                              height: size.height * 0.40,
                               child: PageView.builder(
                                 controller:
                                     HomeTabBloc.get(context).pageController,

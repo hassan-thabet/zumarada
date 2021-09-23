@@ -8,8 +8,7 @@ import 'package:zumarada/screens/onboarding/components/single_page_view.dart';
 class OnBoardingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    double height = MediaQuery.of(context).size.height;
-
+    Size size = MediaQuery.of(context).size;
     return BlocConsumer<OnBoardingBloc, OnBoardingStates>(
       listener: (context, state) {},
       builder: (context, state) {
@@ -17,7 +16,7 @@ class OnBoardingScreen extends StatelessWidget {
           body: Column(
             children: [
               Container(
-                height: height * 0.90,
+                height: size.height * 0.90,
                 child: PageView(
                   controller: OnBoardingBloc.get(context).controller,
                   onPageChanged: (index) {
@@ -48,7 +47,7 @@ class OnBoardingScreen extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 12),
                 child: Container(
-                  height: height * 0.10,
+                  height: size.height * 0.10,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.center,

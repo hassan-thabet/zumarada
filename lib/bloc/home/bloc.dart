@@ -15,6 +15,21 @@ class HomeBloc extends Cubit<HomeStates> {
 
   int currentTab = 0;
 
+  final List<BottomNavigationBarItem> bottomNavBarItems = [
+    BottomNavigationBarItem(
+        icon: Icon(
+          Icons.home_outlined,
+        ),
+        label: 'home'),
+    BottomNavigationBarItem(icon: Icon(Icons.search), label: 'search'),
+    BottomNavigationBarItem(
+        icon: Icon(Icons.shopping_bag_outlined), label: 'Cart'),
+    BottomNavigationBarItem(
+        icon: Icon(Icons.favorite_border_sharp), label: 'Favorite'),
+    BottomNavigationBarItem(
+        icon: Icon(Icons.person_outline_rounded), label: 'Profile'),
+  ];
+
   List<Widget> screensList = [
     HomeTab(),
     SearchTab(),

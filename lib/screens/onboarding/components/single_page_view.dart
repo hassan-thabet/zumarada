@@ -9,9 +9,7 @@ class SinglePageView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double height = MediaQuery.of(context).size.height;
-    double width = MediaQuery.of(context).size.width;
-
+    Size size = MediaQuery.of(context).size;
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 20),
       alignment: Alignment.center,
@@ -21,8 +19,8 @@ class SinglePageView extends StatelessWidget {
           (imagePath != null)
               ? Image.asset(
                   imagePath!,
-                   height: height * 0.3,
-                   width: width ,
+                  height: size.height * 0.3,
+                  width: size.width,
                 )
               : Container(),
 
