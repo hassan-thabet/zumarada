@@ -50,8 +50,6 @@ class MyApp extends StatelessWidget {
           bottomNavigationBarTheme: BottomNavigationBarThemeData(
             elevation: 4,
             backgroundColor: Colors.white,
-            //selectedIconTheme: IconThemeData(color: BUTTON_COLOR, size: 38),
-            //selectedLabelStyle: TextStyle(color: BUTTON_COLOR, fontSize: 10),
             showSelectedLabels: false,
             showUnselectedLabels: false,
             selectedItemColor: BUTTON_COLOR,
