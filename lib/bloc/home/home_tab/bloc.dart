@@ -30,6 +30,7 @@ class HomeTabBloc extends Cubit<HomeTabStates> {
 
   void buttemFavorit() {
     buttemfavorit = !buttemfavorit;
+
     emit(HomeTabButtemFavorit());
   }
 
@@ -39,6 +40,7 @@ class HomeTabBloc extends Cubit<HomeTabStates> {
         products.add(Product.fromJson(element.data()));
       });
       print('products fetched successfully');
+
       emit((HomeTabGetProductsState()));
     });
   }

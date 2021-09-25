@@ -1,11 +1,12 @@
 class Product {
   late String title, description, price, image;
 
-  Product(
-      {required this.title,
-      required this.description,
-      required this.price,
-      required this.image});
+  Product({
+    required this.title,
+    required this.description,
+    required this.price,
+    required this.image,
+  });
 
   Product.fromJson(Map<String, dynamic> json) {
     title = json['title'];
