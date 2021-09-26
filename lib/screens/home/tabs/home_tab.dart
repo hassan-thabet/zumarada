@@ -37,9 +37,29 @@ class HomeTab extends StatelessWidget {
                                     HomeTabBloc.get(context).pageController,
                                 itemCount: 4,
                                 itemBuilder: (context, index) => Container(
-                                  child: Image.network(
-                                    'https://image.freepik.com/free-psd/beauty-care-cosmetic-product-mock-up_23-2148891586.jpg',
-                                    fit: BoxFit.fill,
+                                  child: Stack(
+                                    alignment: AlignmentDirectional.bottomStart,
+                                    children: [
+                                      Image.network(
+                                        'https://image.freepik.com/free-psd/beauty-care-cosmetic-product-mock-up_23-2148891586.jpg',
+                                        fit: BoxFit.fill,
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: Container(
+                                          width: 190,
+                                          child: Text('The Prodcte The Good',
+                                              style: Theme.of(context)
+                                                  .textTheme
+                                                  .headline3!
+                                                  .copyWith(
+                                                      fontSize: 35,
+                                                      fontWeight:
+                                                          FontWeight.w700,
+                                                      color: Colors.white)),
+                                        ),
+                                      ),
+                                    ],
                                   ),
                                 ),
                               )),

@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:zumarada/bloc/home/bloc.dart';
 import 'package:zumarada/bloc/onboarding/bloc.dart';
 import 'package:zumarada/bloc/signup/bloc.dart';
+import 'package:zumarada/screens/categore_screene.dart';
 import 'package:zumarada/screens/home/home_screen.dart';
 import 'package:zumarada/screens/login/login_screen.dart';
 import 'package:zumarada/screens/onboarding/onboarding_screen.dart';
@@ -12,6 +13,7 @@ import 'package:zumarada/screens/signup/signup_screen.dart';
 import 'package:zumarada/screens/splash/splash_screen.dart';
 
 import 'bloc/home/home_tab/bloc.dart';
+import 'bloc/search_categore/bloc.dart';
 import 'constants/my_colors.dart';
 
 void main() async {
@@ -42,6 +44,7 @@ class MyApp extends StatelessWidget {
             create: (context) => HomeTabBloc()
               ..getProducts()
               ..getBrands()),
+        BlocProvider(create: (context) => SearchCategoreBloc()..getProducts()),
       ],
       child: MaterialApp(
         home: SplashScreen(),
@@ -106,6 +109,7 @@ class MyApp extends StatelessWidget {
           'LoginScreen': (context) => LoginScreen(),
           'SignUpScreen': (context) => SignupScreen(),
           'HomeScreen': (context) => HomeScreen(),
+          'CategoreScreene': (context) => CategoreScreene(),
         },
       ),
     );
