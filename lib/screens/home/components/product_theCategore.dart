@@ -11,16 +11,17 @@ class ProductTheCategore extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(0.0),
+      padding: const EdgeInsets.all(5.0),
       child: Container(
-        color: Colors.white,
+        width: 175,
+        color: Colors.white70,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Image.network(
               product.image,
-              height: 74,
-              width: 100,
+              height: 170,
+              width: 170,
               fit: BoxFit.cover,
             ),
             SizedBox(

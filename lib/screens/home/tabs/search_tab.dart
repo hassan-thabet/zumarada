@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:zumarada/constants/my_colors.dart';
 import 'package:zumarada/screens/home/components/search_component.dart';
 
+import '../../categore_screene.dart';
+
 class SearchTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -30,12 +32,12 @@ class SearchTab extends StatelessWidget {
             ),
             MaterialButton(
               onPressed: () {
-                Navigator.pushNamed(context, 'CategoreScreene');
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => CategoreScreene()));
               },
               child: Row(
                 children: [
                   CircleAvatar(
-                    //backgroundImage: AssetImage('assets/icons/brush.png'),
                     radius: 25,
                     backgroundColor: DART_MAIN_COLOR,
                     child: Image.asset(
@@ -65,7 +67,6 @@ class SearchTab extends StatelessWidget {
               child: Row(
                 children: [
                   CircleAvatar(
-                    //backgroundImage: AssetImage('assets/icons/brush.png'),
                     radius: 25,
                     backgroundColor: LIGHT_MAIN_COLOR,
                     child: Image.asset(
@@ -95,7 +96,6 @@ class SearchTab extends StatelessWidget {
               child: Row(
                 children: [
                   CircleAvatar(
-                    //backgroundImage: AssetImage('assets/icons/brush.png'),
                     radius: 25,
                     backgroundColor: DART_MAIN_COLOR,
                     child: Image.asset(
@@ -125,7 +125,6 @@ class SearchTab extends StatelessWidget {
               child: Row(
                 children: [
                   CircleAvatar(
-                    //backgroundImage: AssetImage('assets/icons/brush.png'),
                     radius: 25,
                     backgroundColor: LIGHT_MAIN_COLOR,
                     child: Image.asset(
@@ -155,7 +154,6 @@ class SearchTab extends StatelessWidget {
               child: Row(
                 children: [
                   CircleAvatar(
-                    //backgroundImage: AssetImage('assets/icons/brush.png'),
                     radius: 25,
                     backgroundColor: DART_MAIN_COLOR,
                     child: Image.asset(
