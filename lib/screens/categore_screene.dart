@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:zumarada/bloc/search_categore/bloc.dart';
 import 'package:zumarada/bloc/search_categore/stats.dart';
-
 import 'home/components/product_theCategore.dart';
+import 'home/components/search_component.dart';
 
 class CategoreScreene extends StatelessWidget {
   @override
@@ -20,13 +20,23 @@ class CategoreScreene extends StatelessWidget {
             ),
             body: Padding(
               padding: const EdgeInsets.all(8.0),
-              child: GridView.builder(
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2, mainAxisSpacing: 5, crossAxisSpacing: 5),
-                itemCount: SearchCategoreBloc.get(context).products.length,
-                itemBuilder: (context, index) => ProductTheCategore(
-                  favoritonTab: () {},
-                  product: SearchCategoreBloc.get(context).products[index],
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    SearchComponent(),
+                    GridView.count(
+                      crossAxisCount: 2,
+                      childAspectRatio: 1 / 1.6,
+                      shrinkWrap: true,
+                      children: List.generate(
+                          SearchCategoreBloc.get(context).products.length,
+                          (index) => ProductTheCategore(
+                                favoritonTab: () {},
+                                product: SearchCategoreBloc.get(context)
+                                    .products[index],
+                              )),
+                    ),
+                  ],
                 ),
               ),
             ),
