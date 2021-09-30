@@ -11,7 +11,11 @@ class SearchCategoreBloc extends Cubit<SearchCategoreStats> {
 
   List<Product> products = [];
   void getProducts() {
-    FirebaseFirestore.instance.collection('products').get().then((value) {
+    FirebaseFirestore.instance
+        .collection('products')
+        .limit(1)
+        .get()
+        .then((value) {
       value.docs.forEach((element) {
         products.add(Product.fromJson(element.data()));
       });

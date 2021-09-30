@@ -1,12 +1,13 @@
 class Product {
-  // ignore: non_constant_identifier_names
-  late String title, description, price, image, uid, category_id;
+  late String title, description, price, image, uid, categoryId;
 
   Product({
     required this.title,
     required this.description,
     required this.price,
     required this.image,
+    //required this.uid,
+    required this.categoryId,
   });
 
   Product.fromJson(Map<String, dynamic> json) {
@@ -14,8 +15,8 @@ class Product {
     description = json['description'];
     price = json['price'];
     image = json['image'];
-    uid = json['uid'];
-    category_id = ['category_id'] as String;
+    //uid = json['uId'];
+    categoryId = json['category_id'];
   }
 
   Map<String, dynamic> productsToMap() {
@@ -24,8 +25,8 @@ class Product {
       'description': description,
       'price': price,
       'image': image,
-      'uid': uid,
-      'category_id': category_id,
+      //'uid': uid,
+      'category_id': categoryId,
     };
   }
 }

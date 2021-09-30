@@ -37,10 +37,11 @@ class HomeTabBloc extends Cubit<HomeTabStates> {
   void getProducts() {
     FirebaseFirestore.instance.collection('products').get().then((value) {
       value.docs.forEach((element) {
+        print(Product.fromJson(element.data()));
         products.add(Product.fromJson(element.data()));
       });
-      print('products fetched successfully');
 
+      print('products fetched successfully');
       emit((HomeTabGetProductsState()));
     });
   }
