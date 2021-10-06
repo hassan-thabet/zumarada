@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 const DART_MAIN_COLOR = Color(0xFFF4717F);
 const LIGHT_MAIN_COLOR = Color(0xFFF8B5BC);
 
