@@ -10,16 +10,17 @@ class SearchCategoreBloc extends Cubit<SearchCategoreStats> {
   static SearchCategoreBloc get(context) => BlocProvider.of(context);
 
   List<Product> products = [];
-  void getProducts() {
-    FirebaseFirestore.instance
-        .collection('products')
-        .limit(1)
-        .get()
-        .then((value) {
+    void getCategoryProducts(String categoryName) {
+    FirebaseFirestore.instance.collection('products')
+    .where('category_id' , isEqualTo: categoryName)
+    .get()
+    .then((value) {
       value.docs.forEach((element) {
+        print(Product.fromJson(element.data()));
         products.add(Product.fromJson(element.data()));
       });
 
+      print('products fetched successfully');
       emit((SearchCategoreGetProductsState()));
     });
   }

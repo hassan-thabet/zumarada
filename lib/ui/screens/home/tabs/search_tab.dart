@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:zumarada/constants/my_colors.dart';
-import 'package:zumarada/screens/home/components/search_component.dart';
+import 'package:zumarada/ui/screens/home/components/search_component.dart';
 
 import '../../categore_screene.dart';
 
@@ -121,7 +121,11 @@ class SearchTab extends StatelessWidget {
               height: 15,
             ),
             MaterialButton(
-              onPressed: () {},
+              onPressed: () 
+              {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => CategoreScreene()));
+              },
               child: Row(
                 children: [
                   CircleAvatar(

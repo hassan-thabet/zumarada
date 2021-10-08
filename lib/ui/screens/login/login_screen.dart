@@ -3,8 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:zumarada/bloc/login/bloc.dart';
 import 'package:zumarada/bloc/login/states.dart';
 import 'package:zumarada/constants/my_colors.dart';
-import 'package:zumarada/screens/signup/components/custom_button.dart';
-import 'package:zumarada/screens/signup/components/custom_text_field.dart';
+import 'package:zumarada/ui/screens/signup/components/custom_button.dart';
+import 'package:zumarada/ui/screens/signup/components/custom_text_field.dart';
 
 class LoginScreen extends StatelessWidget {
   @override

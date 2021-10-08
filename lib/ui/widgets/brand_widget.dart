@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:zumarada/models/brand.dart';
 
-class BrandComponent extends StatelessWidget {
+class BrandWidget extends StatelessWidget {
   late final Brand brand;
 
-  BrandComponent({required this.brand});
-
+  BrandWidget({required this.brand});
   @override
   Widget build(BuildContext context) {
     return Column(

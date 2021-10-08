@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:zumarada/bloc/onboarding/bloc.dart';
 import 'package:zumarada/bloc/onboarding/states.dart';
-import 'package:zumarada/screens/onboarding/components/indicator.dart';
-import 'package:zumarada/screens/onboarding/components/single_page_view.dart';
+import 'package:zumarada/ui/screens/onboarding/components/indicator.dart';
+import 'package:zumarada/ui/screens/onboarding/components/single_page_view.dart';
 
 class OnBoardingScreen extends StatelessWidget {
   @override

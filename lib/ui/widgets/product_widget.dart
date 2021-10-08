@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:zumarada/bloc/home/home_tab/bloc.dart';
 import 'package:zumarada/models/product.dart';
 
-class ProductComponent extends StatelessWidget {
+class ProductWidget extends StatelessWidget {
   late final Product product;
   final VoidCallback favoritonTab;
 
-  ProductComponent({required this.product, required this.favoritonTab});
+  ProductWidget({required this.product, required this.favoritonTab});
 
   @override
   Widget build(BuildContext context) {
@@ -37,12 +37,6 @@ class ProductComponent extends StatelessWidget {
                       .bodyText1!
                       .copyWith(fontSize: 15)),
             ),
-            // SizedBox(
-            //   height: 5,
-            // ),
-            // Text(
-            //   'Matte Lip stick',
-            // ),
             Spacer(),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 6),

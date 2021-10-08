@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:zumarada/bloc/signup/bloc.dart';
 import 'package:zumarada/bloc/signup/states.dart';
 import 'package:zumarada/constants/my_colors.dart';
-import 'package:zumarada/screens/signup/components/custom_text_field.dart';
+import 'package:zumarada/ui/screens/signup/components/custom_text_field.dart';
 
 import 'components/custom_button.dart';
 

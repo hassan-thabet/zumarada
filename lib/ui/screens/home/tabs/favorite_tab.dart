@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:zumarada/screens/home/components/favorit_component.dart';
+import 'package:zumarada/ui/screens/home/components/favorit_component.dart';
 
 class FavoriteTab extends StatelessWidget {
   @override
