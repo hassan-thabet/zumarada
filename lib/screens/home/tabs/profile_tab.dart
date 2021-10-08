@@ -18,17 +18,14 @@ class ProfileTab extends StatelessWidget {
           children: [
             MaterialButton(
               onPressed: () => heroScreenPage(context),
-              child: Hero(
-                tag: 'hero Profile',
+             
                 child: CircleAvatar(
                   radius: 45,
                   backgroundImage: NetworkImage(
                       'https://images.pexels.com/photos/388517/pexels-photo-388517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'),
                   backgroundColor: LIGHT_MAIN_COLOR,
                   // child: Image.network(
-                  //     'https://images.pexels.com/photos/388517/pexels-photo-388517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'),
-                ),
-              ),
+                  //     'https://images.pexels.com/photos/388517/pexels-photo-388517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=
             ),
             SizedBox(
               height: 20,
@@ -113,16 +110,5 @@ class ProfileTab extends StatelessWidget {
         ),
       ),
     );
-  }
-
-  void heroScreenPage(BuildContext context) {
-    Navigator.of(context).push(MaterialPageRoute(
-        builder: (ctx) => Scaffold(
-                body: Center(
-                    child: Hero(
-              tag: 'hero Profile',
-              child: Image.network(
-                  'https://images.pexels.com/photos/388517/pexels-photo-388517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'),
-            )))));
   }
 }
