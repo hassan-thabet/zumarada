@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:zumarada/bloc/onboarding/bloc.dart';
+import 'package:zumarada/bloc/onboarding/onboarding_bloc.dart';
 import 'package:zumarada/ui/widgets/onboarding_content_widget.dart';
 
 class BuildOnBoardingContentSection extends StatelessWidget {

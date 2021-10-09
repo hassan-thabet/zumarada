@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:zumarada/bloc/login/bloc.dart';
-import 'package:zumarada/bloc/login/states.dart';
+import 'package:zumarada/bloc/login/login_bloc.dart';
+import 'package:zumarada/bloc/login/login_states.dart';
 import 'package:zumarada/constants/my_colors.dart';
 import 'package:zumarada/ui/widgets/custom_button_widget.dart';
 import 'package:zumarada/ui/widgets/custom_textfield_widget.dart';

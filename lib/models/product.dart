@@ -1,12 +1,11 @@
 class Product {
-  late String title, description, price, image, uid, categoryId;
+  late String title, description, price, image, categoryId;
 
   Product({
     required this.title,
     required this.description,
     required this.price,
     required this.image,
-    //required this.uid,
     required this.categoryId,
   });
 
@@ -15,7 +14,6 @@ class Product {
     description = json['description'];
     price = json['price'];
     image = json['image'];
-    //uid = json['uId'];
     categoryId = json['category_id'];
   }
 
@@ -25,7 +23,6 @@ class Product {
       'description': description,
       'price': price,
       'image': image,
-      //'uid': uid,
       'category_id': categoryId,
     };
   }

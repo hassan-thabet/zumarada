@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:zumarada/bloc/signup/bloc.dart';
-import 'package:zumarada/bloc/signup/states.dart';
+import 'package:zumarada/bloc/signup/signup_bloc.dart';
+import 'package:zumarada/bloc/signup/signup_states.dart';
 import 'package:zumarada/constants/my_colors.dart';
 import 'package:zumarada/ui/widgets/custom_button_widget.dart';
 import 'package:zumarada/ui/widgets/custom_textfield_widget.dart';
-
 
 class SignupScreen extends StatelessWidget {
   @override

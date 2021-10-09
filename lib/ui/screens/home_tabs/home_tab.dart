@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:zumarada/bloc/home/home_tab/bloc.dart';
 import 'package:zumarada/bloc/home/home_tab/states.dart';
-import 'package:zumarada/constants/my_colors.dart';
-import 'package:zumarada/ui/components/build_brands_section.dart';
+import 'package:zumarada/ui/components/build_bestsellers_section.dart';
 import 'package:zumarada/ui/components/build_products_section.dart';
 import 'package:zumarada/ui/components/build_seperator_section.dart';
 
@@ -21,81 +19,130 @@ class HomeTab extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Stack(
-                  alignment: AlignmentDirectional.bottomEnd,
-                  children: [
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(22),
-                      child: Container(
-                          decoration: BoxDecoration(),
-                          clipBehavior: Clip.antiAlias,
-                          width: double.infinity,
-                          height: size.height * 0.40,
-                          child: PageView.builder(
-                            controller: HomeTabBloc.get(context).pageController,
-                            itemCount: 4,
-                            itemBuilder: (context, index) => Container(
-                              child: Stack(
-                                alignment: AlignmentDirectional.center,
-                                children: [
-                                  Container(
-                                    width: size.width,
-                                    child: Image.network(
-                                      'https://image.freepik.com/free-psd/beauty-care-cosmetic-product-mock-up_23-2148891586.jpg',
-                                      fit: BoxFit.fitWidth,
+                BuildBestSellersSection(),
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 18),
+                  child: Column(
+                    children: [
+                      Container(
+                          height: size.height / 6,
+                          width: size.width,
+                          child: Row(
+                            children: [
+                              Expanded(
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8),
+                                  child: Container(
+                                    padding: const EdgeInsets.all(4),
+                                    decoration: BoxDecoration(
+                                      color: Color(0xffEEE0D7),
+                                      borderRadius: BorderRadius.circular(8),
                                     ),
-                                  ),
-                                  Align(
-                                    alignment: Alignment.bottomLeft,
-                                    child: Padding(
-                                      padding: const EdgeInsets.only(
-                                          left: 12, bottom: 10),
-                                      child: Container(
-                                        width: 190,
-                                        child: Text('The Prodcte The Good',
-                                            style: Theme.of(context)
-                                                .textTheme
-                                                .headline3!
-                                                .copyWith(
-                                                    fontSize: 35,
-                                                    fontWeight: FontWeight.w700,
-                                                    color: Colors.white)),
+                                    height: size.height / 6,
+                                    child: Align(
+                                      alignment: Alignment.center,
+                                      child: Text(
+                                        'Shop \nBy Brand'.toUpperCase(),
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .subtitle1!
+                                            .copyWith(fontSize: 24),
+                                        textAlign: TextAlign.center,
                                       ),
                                     ),
                                   ),
-                                ],
+                                ),
                               ),
-                            ),
+                              Expanded(
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8),
+                                  child: Container(
+                                    padding: const EdgeInsets.all(4),
+                                    decoration: BoxDecoration(
+                                      color: Color(0xffEEE0D7),
+                                      borderRadius: BorderRadius.circular(8),
+                                    ),
+                                    height: size.height / 6,
+                                    child: Align(
+                                      alignment: Alignment.center,
+                                      child: Text(
+                                        'Shop \nBy Category'.toUpperCase(),
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .subtitle1!
+                                            .copyWith(fontSize: 24),
+                                        textAlign: TextAlign.center,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
                           )),
-                    ),
-                    BlocBuilder<HomeTabBloc, HomeTabStates>(
-                        builder: (context, state) {
-                      return Padding(
-                        padding: const EdgeInsets.all(15.0),
-                        child: Row(
-                          children: [
-                            Spacer(),
-                            SmoothPageIndicator(
-                              controller:
-                                  HomeTabBloc.get(context).pageController,
-                              count: 4,
-                              effect: ScrollingDotsEffect(
-                                  dotHeight: 7,
-                                  dotWidth: 7,
-                                  dotColor: SCAFFOLD_BACKGROUND_COLOR,
-                                  activeDotColor: BUTTON_COLOR),
-                            ),
-                          ],
-                        ),
-                      );
-                    })
-                  ],
+                      Container(
+                          height: size.height / 6,
+                          width: size.width,
+                          child: Row(
+                            children: [
+                              Expanded(
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8),
+                                  child: Container(
+                                    padding: const EdgeInsets.all(4),
+                                    decoration: BoxDecoration(
+                                      color: Color(0xffEEE0D7),
+                                      borderRadius: BorderRadius.circular(8),
+                                    ),
+                                    height: size.height / 6,
+                                    child: Align(
+                                      alignment: Alignment.center,
+                                      child: Text(
+                                        'Shop \nmost viewed'.toUpperCase(),
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .subtitle1!
+                                            .copyWith(fontSize: 24),
+                                        textAlign: TextAlign.center,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Expanded(
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8),
+                                  child: Container(
+                                    padding: const EdgeInsets.all(4),
+                                    decoration: BoxDecoration(
+                                      color: Color(0xffEEE0D7),
+                                      borderRadius: BorderRadius.circular(8),
+                                    ),
+                                    height: size.height / 6,
+                                    child: Align(
+                                      alignment: Alignment.center,
+                                      child: Text(
+                                        'Shop \nall offers'.toUpperCase(),
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .subtitle1!
+                                            .copyWith(fontSize: 24),
+                                        textAlign: TextAlign.center,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          )),
+                    ],
+                  ),
                 ),
-                BuildSeperatorSection(title: 'Brands', onPressed: () {}),
-                BuildBrandsSection(),
+                //BuildSeperatorSection(title: 'Brands', onPressed: () {}),
+                //BuildBrandsSection(),
                 BuildSeperatorSection(title: 'New Arrivals', onPressed: () {}),
                 BuildProductsSection(),
-                BuildSeperatorSection(title: 'Lip Collection', onPressed: () {}),
+                BuildSeperatorSection(
+                    title: 'Lip Collection', onPressed: () {}),
                 BuildProductsSection(),
               ],
             ),

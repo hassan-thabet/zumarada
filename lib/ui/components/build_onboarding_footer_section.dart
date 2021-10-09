@@ -1,19 +1,17 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:zumarada/bloc/onboarding/bloc.dart';
-import 'package:zumarada/bloc/onboarding/states.dart';
+import 'package:zumarada/bloc/onboarding/onboarding_bloc.dart';
+import 'package:zumarada/bloc/onboarding/onboarding_states.dart';
 import 'package:zumarada/ui/widgets/onboarding_indicator_widget.dart';
-class BuildOnBoardingFooterSection extends StatelessWidget {
 
+class BuildOnBoardingFooterSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    return BlocBuilder<OnBoardingBloc , OnBoardingStates>(
-        builder: (context , state)
-        {
-          return Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 12),
+    return BlocBuilder<OnBoardingBloc, OnBoardingStates>(
+        builder: (context, state) {
+      return Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 12),
             child: Container(
               height: size.height * 0.10,
               child: Row(
