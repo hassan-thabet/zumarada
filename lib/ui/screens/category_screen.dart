@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:zumarada/bloc/home/home_tab/bloc.dart';
 import 'package:zumarada/bloc/search_categore/bloc.dart';
 import 'package:zumarada/bloc/search_categore/stats.dart';
-import 'home/components/product_theCategore.dart';
-import 'home/components/search_component.dart';
+import 'package:zumarada/ui/components/build_search_section.dart';
+import 'package:zumarada/ui/widgets/product_widget.dart';
 
-class CategoreScreene extends StatelessWidget {
+class CategoryScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<SearchCategoreBloc, SearchCategoreStats>(
@@ -23,19 +24,21 @@ class CategoreScreene extends StatelessWidget {
               child: SingleChildScrollView(
                 child: Column(
                   children: [
-                    SearchComponent(),
+                    BuildSearchSection(),
+
                     GridView.count(
                       crossAxisCount: 2,
                       childAspectRatio: 1 / 1.6,
                       shrinkWrap: true,
                       children: List.generate(
                           SearchCategoreBloc.get(context).products.length,
-                          (index) => ProductTheCategore(
-                                favoritonTab: () {},
-                                product: SearchCategoreBloc.get(context)
-                                    .products[index],
-                              )),
+                          (index) => ProductWidget(
+                            product: HomeTabBloc.get(context).products[index],
+                            favoritonTab: () {
+                            },
+                          )),
                     ),
+
                   ],
                 ),
               ),

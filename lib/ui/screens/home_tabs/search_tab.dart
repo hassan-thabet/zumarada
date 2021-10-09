@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:zumarada/constants/my_colors.dart';
-import 'package:zumarada/ui/screens/home/components/search_component.dart';
+import 'package:zumarada/ui/components/build_search_section.dart';
 
-import '../../categore_screene.dart';
+import '../category_screen.dart';
 
 class SearchTab extends StatelessWidget {
   @override
@@ -19,7 +19,7 @@ class SearchTab extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SearchComponent(),
+            BuildSearchSection(),
             SizedBox(
               height: 20,
             ),
@@ -33,7 +33,7 @@ class SearchTab extends StatelessWidget {
             MaterialButton(
               onPressed: () {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => CategoreScreene()));
+                    MaterialPageRoute(builder: (context) => CategoryScreen()));
               },
               child: Row(
                 children: [
@@ -124,7 +124,7 @@ class SearchTab extends StatelessWidget {
               onPressed: () 
               {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => CategoreScreene()));
+                    MaterialPageRoute(builder: (context) => CategoryScreen()));
               },
               child: Row(
                 children: [

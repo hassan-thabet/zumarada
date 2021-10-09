@@ -1,12 +1,11 @@
+
 import 'package:flutter/material.dart';
 import 'package:zumarada/constants/my_colors.dart';
 
-class Indicator extends StatelessWidget {
+class OnBoardingIndicatorWidget extends StatelessWidget {
 
   late final bool isCurrentPage;
-
-  Indicator(this.isCurrentPage);
-
+  OnBoardingIndicatorWidget(this.isCurrentPage);
   @override
   Widget build(BuildContext context) {
     return Container(

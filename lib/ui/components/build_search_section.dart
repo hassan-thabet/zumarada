@@ -1,6 +1,7 @@
-import 'package:flutter/material.dart';
 
-class SearchComponent extends StatelessWidget {
+import 'package:flutter/material.dart';
+class BuildSearchSection extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -20,7 +21,7 @@ class SearchComponent extends StatelessWidget {
             border: InputBorder.none,
             hintText: 'Search',
             hintStyle:
-                Theme.of(context).textTheme.caption!.copyWith(fontSize: 17),
+            Theme.of(context).textTheme.caption!.copyWith(fontSize: 17),
             suffixIcon: Icon(Icons.search),
           ),
         ),

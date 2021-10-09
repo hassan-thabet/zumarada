@@ -3,9 +3,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:zumarada/bloc/signup/bloc.dart';
 import 'package:zumarada/bloc/signup/states.dart';
 import 'package:zumarada/constants/my_colors.dart';
-import 'package:zumarada/ui/screens/signup/components/custom_text_field.dart';
+import 'package:zumarada/ui/widgets/custom_button_widget.dart';
+import 'package:zumarada/ui/widgets/custom_textfield_widget.dart';
 
-import 'components/custom_button.dart';
 
 class SignupScreen extends StatelessWidget {
   @override
@@ -36,37 +36,26 @@ class SignupScreen extends StatelessWidget {
                         style: Theme.of(context).textTheme.headline2),
                   ],
                 ),
-                SizedBox(
-                  height: 20,
-                ),
-                CustomTextField(
+                CustomTextFieldWidget(
                   keyboardType: TextInputType.name,
                   hint: 'First Name',
                   isSecure: false,
                   controller: SignUpBloc.get(context).firstNameController,
                 ),
-                SizedBox(
-                  height: 10,
-                ),
-                CustomTextField(
+
+                CustomTextFieldWidget(
                   keyboardType: TextInputType.name,
                   hint: 'Last Name',
                   isSecure: false,
                   controller: SignUpBloc.get(context).lastNameController,
                 ),
-                SizedBox(
-                  height: 10,
-                ),
-                CustomTextField(
+                CustomTextFieldWidget(
                   keyboardType: TextInputType.emailAddress,
                   hint: 'Email',
                   isSecure: false,
                   controller: SignUpBloc.get(context).emailController,
                 ),
-                SizedBox(
-                  height: 10,
-                ),
-                CustomTextField(
+                CustomTextFieldWidget(
                   keyboardType: TextInputType.visiblePassword,
                   suffixIconData: SignUpBloc.get(context).passwordSecure == true
                       ? Icons.visibility_off
@@ -78,15 +67,7 @@ class SignupScreen extends StatelessWidget {
                   isSecure: SignUpBloc.get(context).passwordSecure,
                   controller: SignUpBloc.get(context).passwordController,
                 ),
-                SizedBox(
-                  height: 30,
-                ),
-                CustomButton(
-                  text: 'Create account',
-                  width: double.infinity,
-                  onTap: () {},
-                  color: BUTTON_COLOR,
-                ),
+                CustomButtonWidget(text: 'Create account', onTap: (){}),
                 Row(children: [
                   Expanded(
                       child: Divider(
@@ -106,18 +87,10 @@ class SignupScreen extends StatelessWidget {
                     height: 36,
                   )),
                 ]),
-                SizedBox(
-                  height: 10,
-                ),
-                CustomButton(
-                  text: 'Connect with Google',
-                  width: double.infinity,
-                  onTap: () {
-                    SignUpBloc.get(context).signInWithGoogle();
-                  },
-                  color: Colors.redAccent,
-                ),
-                SizedBox(height: 6),
+                CustomButtonWidget(text: 'Connect with Google', onTap: (){
+                  SignUpBloc.get(context).signInWithGoogle();
+                }),
+
                 Expanded(
                     child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -126,9 +99,7 @@ class SignupScreen extends StatelessWidget {
                       'Already have an account ?',
                       style: Theme.of(context).textTheme.button,
                     ),
-                    SizedBox(
-                      width: 4,
-                    ),
+
                     TextButton(
                       onPressed: () {
                         Navigator.pushNamed(context, 'LoginScreen');

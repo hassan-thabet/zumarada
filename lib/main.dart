@@ -5,12 +5,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:zumarada/bloc/home/bloc.dart';
 import 'package:zumarada/bloc/onboarding/bloc.dart';
 import 'package:zumarada/bloc/signup/bloc.dart';
-import 'package:zumarada/ui/screens/categore_screene.dart';
-import 'package:zumarada/ui/screens/home/home_screen.dart';
-import 'package:zumarada/ui/screens/login/login_screen.dart';
-import 'package:zumarada/ui/screens/onboarding/onboarding_screen.dart';
-import 'package:zumarada/ui/screens/signup/signup_screen.dart';
-import 'package:zumarada/ui/screens/splash/splash_screen.dart';
+import 'package:zumarada/ui/screens/category_screen.dart';
+import 'package:zumarada/ui/screens/home_screen.dart';
+import 'package:zumarada/ui/screens/login_screen.dart';
+import 'package:zumarada/ui/screens/onboarding_screen.dart';
+import 'package:zumarada/ui/screens/signup_screen.dart';
+import 'package:zumarada/ui/screens/splash_screen.dart';
 
 import 'bloc/home/home_tab/bloc.dart';
 import 'bloc/search_categore/bloc.dart';
@@ -44,7 +44,7 @@ class MyApp extends StatelessWidget {
             create: (context) => HomeTabBloc()
               ..getProducts()
               ..getBrands()),
-        BlocProvider(create: (context) => SearchCategoreBloc()..getCategoryProducts('face')),
+        BlocProvider(create: (context) => SearchCategoreBloc()..getCategoryProducts()),
       ],
       child: MaterialApp(
         home: SplashScreen(),
@@ -109,7 +109,7 @@ class MyApp extends StatelessWidget {
           'LoginScreen': (context) => LoginScreen(),
           'SignUpScreen': (context) => SignupScreen(),
           'HomeScreen': (context) => HomeScreen(),
-          'CategoreScreene': (context) => CategoreScreene(),
+          'CategoreScreene': (context) => CategoryScreen(),
         },
       ),
     );

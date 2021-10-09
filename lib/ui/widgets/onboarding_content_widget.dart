@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class SinglePageView extends StatelessWidget {
+class OnBoardingContentWidget extends StatelessWidget {
   late final String title, description;
   late final String? imagePath;
 
-  SinglePageView(
+  OnBoardingContentWidget(
       {required this.title, required this.description, this.imagePath});
 
   @override
@@ -18,19 +18,19 @@ class SinglePageView extends StatelessWidget {
         children: <Widget>[
           (imagePath != null)
               ? Image.asset(
-                  imagePath!,
-                  height: size.height * 0.3,
-                  width: size.width,
-                )
+            imagePath!,
+            height: size.height * 0.3,
+            width: size.width,
+          )
               : Container(),
 
           SizedBox(
             height: 40,
           ),
           Text(
-            title,
-            textAlign: TextAlign.center,
-            style: Theme.of(context).textTheme.subtitle1
+              title,
+              textAlign: TextAlign.center,
+              style: Theme.of(context).textTheme.subtitle1
           ),
           SizedBox(
             height: 10,
