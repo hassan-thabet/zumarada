@@ -1,8 +1,8 @@
 import 'dart:ui';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:zumarada/models/product.dart';
+import 'package:zumarada/ui/widgets/scroll_product_details.dart';
 
 class ProductDetails extends StatelessWidget {
   late final Product product;
@@ -11,25 +11,26 @@ class ProductDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Container(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              product.title,
-              style: Theme.of(context).textTheme.subtitle1,
-              textAlign: TextAlign.center,
-            ),
-            Image.network(
+          child: Stack(
+        children: [
+          Container(
+            height: size.height * 0.70,
+            child: Image.network(
               product.image,
-              height: 170,
-              width: 170,
+              width: double.infinity,
               fit: BoxFit.cover,
             ),
-          ],
-        ),
-      ),
+          ),
+          ScrollProductDetails(
+            product: product,
+          ),
+        ],
+      )),
     );
   }
 }

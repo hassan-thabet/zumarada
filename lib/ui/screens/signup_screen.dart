@@ -41,7 +41,6 @@ class SignupScreen extends StatelessWidget {
                   isSecure: false,
                   controller: SignUpBloc.get(context).firstNameController,
                 ),
-
                 CustomTextFieldWidget(
                   keyboardType: TextInputType.name,
                   hint: 'Last Name',
@@ -66,7 +65,11 @@ class SignupScreen extends StatelessWidget {
                   isSecure: SignUpBloc.get(context).passwordSecure,
                   controller: SignUpBloc.get(context).passwordController,
                 ),
-                CustomButtonWidget(text: 'Create account', onTap: (){}),
+                CustomButtonWidget(
+                    text: 'Create account',
+                    onTap: () {
+                      Navigator.pushReplacementNamed(context, 'HomeScreen');
+                    }),
                 Row(children: [
                   Expanded(
                       child: Divider(
@@ -86,10 +89,11 @@ class SignupScreen extends StatelessWidget {
                     height: 36,
                   )),
                 ]),
-                CustomButtonWidget(text: 'Connect with Google', onTap: (){
-                  SignUpBloc.get(context).signInWithGoogle();
-                }),
-
+                CustomButtonWidget(
+                    text: 'Connect with Google',
+                    onTap: () {
+                      SignUpBloc.get(context).signInWithGoogle();
+                    }),
                 Expanded(
                     child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -98,7 +102,6 @@ class SignupScreen extends StatelessWidget {
                       'Already have an account ?',
                       style: Theme.of(context).textTheme.button,
                     ),
-
                     TextButton(
                       onPressed: () {
                         Navigator.pushNamed(context, 'LoginScreen');
