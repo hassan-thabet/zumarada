@@ -3,18 +3,19 @@ import 'package:zumarada/bloc/home/home_tab/bloc.dart';
 import 'package:zumarada/models/product.dart';
 import 'package:zumarada/ui/screens/product_details.dart';
 
-class ProductWidget extends StatelessWidget {
+class ProductSaleWidget extends StatelessWidget {
   late final Product product;
   final VoidCallback favoritonTab;
 
-  ProductWidget({required this.product, required this.favoritonTab});
+  ProductSaleWidget({required this.product, required this.favoritonTab});
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: () => Navigator.of(context).push(
-          MaterialPageRoute(builder: (_) => ProductDetails(product: product))),
-      child: Card(
+    return Padding(
+      padding: const EdgeInsets.all(5.0),
+      child: InkWell(
+        onTap: () => Navigator.of(context).push(MaterialPageRoute(
+            builder: (_) => ProductDetails(product: product))),
         child: Container(
           width: 175,
           color: Colors.white70,

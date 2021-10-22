@@ -3,10 +3,18 @@ import 'package:zumarada/constants/my_colors.dart';
 import 'package:zumarada/models/product.dart';
 import 'package:zumarada/ui/components/build_products_section.dart';
 
-class ScrollProductDetails extends StatelessWidget {
+class ScrollProductDetails extends StatefulWidget {
   late final Product product;
 
   ScrollProductDetails({required this.product});
+
+  @override
+  _ScrollProductDetailsState createState() => _ScrollProductDetailsState();
+}
+
+bool descVisibile = false;
+
+class _ScrollProductDetailsState extends State<ScrollProductDetails> {
   @override
   Widget build(BuildContext context) {
     return DraggableScrollableSheet(
@@ -30,7 +38,7 @@ class ScrollProductDetails extends StatelessWidget {
                       topRight: Radius.circular(50),
                     )),
                 child: Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.fromLTRB(8, 21, 8, 8),
                   child: ListView(
                     controller: scrollController,
                     padding: EdgeInsets.zero,
@@ -48,14 +56,14 @@ class ScrollProductDetails extends StatelessWidget {
                           Container(
                             width: 300,
                             child: Text(
-                              product.title,
+                              widget.product.title,
                               maxLines: 2,
                               overflow: TextOverflow.ellipsis,
                               style: Theme.of(context).textTheme.headline3,
                             ),
                           ),
                           Text(
-                            product.price + ' EGP',
+                            widget.product.price + ' EGP',
                             style: Theme.of(context).textTheme.bodyText1,
                           ),
                         ],
@@ -64,10 +72,36 @@ class ScrollProductDetails extends StatelessWidget {
                         height: 20,
                       ),
                       Text(
-                        product.description,
-                        maxLines: 3,
-                        overflow: TextOverflow.ellipsis,
+                        widget.product.description,
                         style: Theme.of(context).textTheme.bodyText2,
+                        maxLines: descVisibile == false ? 3 : 15,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                      Row(
+                        children: [
+                          TextButton(
+                            onPressed: () {
+                              setState(() {
+                                descVisibile = !descVisibile;
+                              });
+                            },
+                            child: descVisibile == false
+                                ? Text(
+                                    'MORE',
+                                    style: TextStyle(
+                                        fontSize: 10,
+                                        fontWeight: FontWeight.w700,
+                                        color: Colors.black),
+                                  )
+                                : Text(
+                                    ' LESS',
+                                    style: TextStyle(
+                                        fontSize: 10,
+                                        fontWeight: FontWeight.w700,
+                                        color: Colors.black),
+                                  ),
+                          ),
+                        ],
                       ),
                       SizedBox(
                         height: 10,
@@ -111,17 +145,20 @@ class ScrollProductDetails extends StatelessWidget {
                     ],
                   ),
                 )),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
+            Container(
+              padding: EdgeInsets.only(right: 12, top: 6),
               child: CircleAvatar(
                 backgroundColor: BUTTON_COLOR,
-                radius: 20,
+                radius: 25,
                 child: IconButton(
-                  icon: Icon(Icons.shopping_bag_outlined),
+                  icon: Icon(
+                    Icons.shopping_bag_outlined,
+                    size: 24,
+                  ),
                   onPressed: () {},
                 ),
               ),
-            ),
+            )
           ],
         );
       },

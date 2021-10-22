@@ -12,58 +12,56 @@ class BuildOnBoardingFooterSection extends StatelessWidget {
         builder: (context, state) {
       return Padding(
         padding: const EdgeInsets.symmetric(horizontal: 12),
-            child: Container(
-              height: size.height * 0.10,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Row(
-                      children: [
-                        OnBoardingIndicatorWidget(
-                            (OnBoardingBloc.get(context).pageIndex == 0)
-                                ? true
-                                : false),
-                        OnBoardingIndicatorWidget(
-                            (OnBoardingBloc.get(context).pageIndex == 1)
-                                ? true
-                                : false),
-                        OnBoardingIndicatorWidget(
-                            (OnBoardingBloc.get(context).pageIndex == 2)
-                                ? true
-                                : false),
-                      ],
-                    ),
-                  ),
-                  (OnBoardingBloc.get(context).pageIndex == 2)
-                      ? InkWell(
+        child: Container(
+          height: size.height * 0.10,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  children: [
+                    OnBoardingIndicatorWidget(
+                        (OnBoardingBloc.get(context).pageIndex == 0)
+                            ? true
+                            : false),
+                    OnBoardingIndicatorWidget(
+                        (OnBoardingBloc.get(context).pageIndex == 1)
+                            ? true
+                            : false),
+                    OnBoardingIndicatorWidget(
+                        (OnBoardingBloc.get(context).pageIndex == 2)
+                            ? true
+                            : false),
+                  ],
+                ),
+              ),
+              (OnBoardingBloc.get(context).pageIndex == 2)
+                  ? InkWell(
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Text('DONE',
                             style: Theme.of(context).textTheme.button),
                       ),
                       onTap: () {
-                        Navigator.pushReplacementNamed(
-                            context, 'LoginScreen');
+                        Navigator.pushReplacementNamed(context, 'HomeScreen');
                       })
-                      : InkWell(
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Text('NEXT',
-                          style: Theme.of(context).textTheme.button),
+                  : InkWell(
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text('NEXT',
+                            style: Theme.of(context).textTheme.button),
+                      ),
+                      onTap: () {
+                        OnBoardingBloc.get(context).nextPageChange(
+                            OnBoardingBloc.get(context).pageIndex);
+                      },
                     ),
-                    onTap: () {
-                      OnBoardingBloc.get(context).nextPageChange(
-                          OnBoardingBloc.get(context).pageIndex);
-                    },
-                  ),
-                ],
-              ),
-            ),
-          );
-        }
-    );
+            ],
+          ),
+        ),
+      );
+    });
   }
 }

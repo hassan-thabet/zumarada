@@ -10,10 +10,20 @@ class BrandWidget extends StatelessWidget {
     return Column(
       children: [
         Padding(
-          padding: const EdgeInsets.all(5.0),
-          child: CircleAvatar(
-            radius: 30,
-            backgroundImage: NetworkImage(brand.brandIcon),
+          padding: const EdgeInsets.symmetric(horizontal: 5),
+          child: Container(
+            clipBehavior: Clip.antiAlias,
+            height: 130,
+            width: 100,
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(30),
+                ),
+                color: Colors.black12),
+            child: Image.network(
+              brand.brandIcon,
+              fit: BoxFit.fill,
+            ),
           ),
         ),
         Text(brand.brandName,

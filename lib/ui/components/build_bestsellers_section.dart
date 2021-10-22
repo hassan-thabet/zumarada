@@ -19,7 +19,7 @@ class BuildBestSellersSection extends StatelessWidget {
               decoration: BoxDecoration(),
               clipBehavior: Clip.antiAlias,
               width: double.infinity,
-              height: size.height / 4,
+              height: size.height / 3,
               child: PageView(
                 controller: HomeTabBloc.get(context).pageController,
                 children: [

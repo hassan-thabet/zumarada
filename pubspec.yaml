@@ -17,13 +17,14 @@ dependencies:
 
 
   cupertino_icons: ^1.0.2
-  flutter_bloc: ^7.2.0
+  flutter_bloc: ^7.3.0
   firebase_core: ^1.6.0
   firebase_auth: ^3.1.1
   cloud_firestore: ^2.5.3
 
   google_sign_in: ^5.1.0
   smooth_page_indicator: ^1.0.0+2
+  video_player: ^2.2.5
 
 dev_dependencies:
   flutter_test:

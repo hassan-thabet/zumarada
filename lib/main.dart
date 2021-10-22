@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:zumarada/bloc/home/bloc.dart';
 import 'package:zumarada/bloc/onboarding/onboarding_bloc.dart';
 import 'package:zumarada/bloc/signup/signup_bloc.dart';
+import 'package:zumarada/ui/screens/beaty_tips_screen.dart';
 import 'package:zumarada/ui/screens/category_screen.dart';
 import 'package:zumarada/ui/screens/home_screen.dart';
 import 'package:zumarada/ui/screens/login_screen.dart';
@@ -110,6 +111,7 @@ class MyApp extends StatelessWidget {
           'SignUpScreen': (context) => SignupScreen(),
           'HomeScreen': (context) => HomeScreen(),
           'CategoreScreene': (context) => CategoryScreen(),
+          'BeautyTipsScreen': (context)=> BeautyTipsScreen(),
         },
       ),
     );
