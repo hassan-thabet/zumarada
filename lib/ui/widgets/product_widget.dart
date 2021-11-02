@@ -21,12 +21,12 @@ class ProductWidget extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Image.network(
-                product.image,
-                height: 170,
-                width: 170,
-                fit: BoxFit.cover,
-              ),
+              FadeInImage.assetNetwork(
+                  height: 170,
+                  width: 170,
+                  fit: BoxFit.cover,
+                  placeholder: 'assets/images/9.jpg',
+                  image: product.image),
               SizedBox(
                 height: 5,
               ),
