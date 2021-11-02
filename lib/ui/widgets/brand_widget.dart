@@ -12,19 +12,18 @@ class BrandWidget extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 5),
           child: Container(
-            clipBehavior: Clip.antiAlias,
-            height: 130,
-            width: 100,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(30),
-                ),
-                color: Colors.black12),
-            child: Image.network(
-              brand.brandIcon,
-              fit: BoxFit.fill,
-            ),
-          ),
+              clipBehavior: Clip.antiAlias,
+              height: 130,
+              width: 100,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(30),
+                  ),
+                  color: Colors.black12),
+              child: FadeInImage.assetNetwork(
+                  fit: BoxFit.cover,
+                  placeholder: 'assets/images/9.jpg',
+                  image: brand.brandIcon)),
         ),
         Text(brand.brandName,
             style:
