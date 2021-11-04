@@ -15,6 +15,17 @@ class FavoriteWidget extends StatelessWidget {
           width: double.infinity,
           child: Column(
             children: [
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  children: [
+                    Text(
+                      'Face',
+                      style: TextStyle(color: Colors.grey),
+                    ),
+                  ],
+                ),
+              ),
               Row(
                 children: [
                   Image.network(
@@ -39,7 +50,8 @@ class FavoriteWidget extends StatelessWidget {
                             style: Theme.of(context)
                                 .textTheme
                                 .bodyText1!
-                                .copyWith(fontSize: 20),
+                                .copyWith(
+                                    fontSize: 17, color: Colors.grey[700]),
                           ),
                         ),
                         SizedBox(
@@ -65,21 +77,39 @@ class FavoriteWidget extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  IconButton(
-                      onPressed: () {},
-                      icon: Icon(
-                        Icons.delete,
-                        color: Colors.grey,
-                      )),
-                  SizedBox(
-                    width: width * 0.6,
+                  InkWell(
+                    onTap: () {},
+                    child: Row(
+                      children: [
+                        Icon(
+                          Icons.delete,
+                          color: Colors.grey[700],
+                        ),
+                        Text(
+                          'Delete',
+                          style: TextStyle(color: Colors.grey),
+                        )
+                      ],
+                    ),
                   ),
-                  IconButton(
-                      onPressed: () {},
-                      icon: Icon(
-                        Icons.shopping_bag_outlined,
-                        color: Colors.grey,
-                      )),
+                  SizedBox(
+                    width: width * 0.4,
+                  ),
+                  InkWell(
+                    onTap: () {},
+                    child: Row(
+                      children: [
+                        Icon(
+                          Icons.shopping_bag_outlined,
+                          color: Colors.grey[700],
+                        ),
+                        Text(
+                          'Add To Card',
+                          style: TextStyle(color: Colors.grey),
+                        )
+                      ],
+                    ),
+                  ),
                 ],
               ),
             ],
