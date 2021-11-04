@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:zumarada/ui/widgets/favorite_widget.dart';
-class BuildFavoritesSection extends StatelessWidget {
 
+class BuildFavoritesSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(

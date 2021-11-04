@@ -7,6 +7,7 @@ import 'package:zumarada/ui/components/build_brands_section.dart';
 import 'package:zumarada/ui/components/build_products_sale_section.dart';
 import 'package:zumarada/ui/components/build_products_section.dart';
 import 'package:zumarada/ui/components/build_seperator_section.dart';
+import 'package:zumarada/ui/widgets/Advertising%20_Window_Widget.dart';
 import 'package:zumarada/ui/widgets/beauty_tips_widget.dart';
 
 class HomeTab extends StatelessWidget {
@@ -27,6 +28,7 @@ class HomeTab extends StatelessWidget {
                 BuildBrandsSection(),
                 BuildSeperatorSection(title: 'Sale', onPressed: () {}),
                 BuildProductsSaleSection(),
+                AdvertisingWindowWidget(),
                 BuildSeperatorSection(title: 'New Arrivals', onPressed: () {}),
                 BuildProductsSection(),
                 BuildSeperatorSection(
