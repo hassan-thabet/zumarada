@@ -10,15 +10,13 @@ class BrandWidget extends StatelessWidget {
     return Column(
       children: [
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 5),
+          padding: const EdgeInsets.symmetric(horizontal: 7),
           child: Container(
               clipBehavior: Clip.antiAlias,
-              height: 130,
-              width: 100,
+              height: 60,
+              width: 125,
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(30),
-                  ),
+                  borderRadius: BorderRadius.circular(10),
                   color: Colors.black12),
               child: FadeInImage.assetNetwork(
                   fit: BoxFit.cover,
