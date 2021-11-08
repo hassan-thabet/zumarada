@@ -8,7 +8,7 @@ class BuildBrandsSection extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 1),
       child: Container(
-        height: 170,
+        height: 100,
         child: ListView.builder(
             scrollDirection: Axis.horizontal,
             itemCount: HomeTabBloc.get(context).brands.length,

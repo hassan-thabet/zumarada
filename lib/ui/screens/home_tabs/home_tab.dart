@@ -4,6 +4,10 @@ import 'package:zumarada/bloc/home/home_tab/bloc.dart';
 import 'package:zumarada/bloc/home/home_tab/states.dart';
 import 'package:zumarada/ui/components/build_bestsellers_section.dart';
 import 'package:zumarada/ui/components/build_brands_section.dart';
+import 'package:zumarada/ui/components/build_eyse_in_home_sechen.dart';
+import 'package:zumarada/ui/components/build_face_in_section.dart';
+import 'package:zumarada/ui/components/build_forher_in_section.dart';
+import 'package:zumarada/ui/components/build_lips_in_section.dart';
 import 'package:zumarada/ui/components/build_products_sale_section.dart';
 import 'package:zumarada/ui/components/build_products_section.dart';
 import 'package:zumarada/ui/components/build_seperator_section.dart';
@@ -26,9 +30,13 @@ class HomeTab extends StatelessWidget {
                 BuildBestSellersSection(),
                 BuildSeperatorSection(title: 'Brands', onPressed: () {}),
                 BuildBrandsSection(),
+                AdvertisingWindowWidget(),
                 BuildSeperatorSection(title: 'Sale', onPressed: () {}),
                 BuildProductsSaleSection(),
-                AdvertisingWindowWidget(),
+                BuildFaceInSection(),
+                BuildLipsInSection(),
+                BuildEyseInSection(),
+                BuildForHerInSection(),
                 BuildSeperatorSection(title: 'New Arrivals', onPressed: () {}),
                 BuildProductsSection(),
                 BuildSeperatorSection(
