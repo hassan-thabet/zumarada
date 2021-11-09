@@ -5,11 +5,19 @@ class CategoryInHomeWidget extends StatelessWidget {
   late final String imageProduct1;
   late final String imageProduct2;
   late final String imageProduct3;
+  late final String nameCategory;
+  late final String nameProduct1;
+  late final String nameProduct2;
+  late final String nameProduct3;
   CategoryInHomeWidget({
     required this.imageCategory,
     required this.imageProduct1,
     required this.imageProduct2,
     required this.imageProduct3,
+    required this.nameCategory,
+    required this.nameProduct1,
+    required this.nameProduct2,
+    required this.nameProduct3,
   });
 
   @override
@@ -53,7 +61,7 @@ class CategoryInHomeWidget extends StatelessWidget {
                         ],
                       ),
                       Text(
-                        'Eyse',
+                        nameCategory,
                         style: Theme.of(context).textTheme.headline3,
                       ),
                     ],
@@ -70,114 +78,106 @@ class CategoryInHomeWidget extends StatelessWidget {
                 Stack(
                   alignment: AlignmentDirectional.topStart,
                   children: [
-                    Container(color: Colors.grey[300], width: 90, height: 60),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 15, left: 5),
-                      child: Column(
-                        children: [
-                          Stack(
-                            alignment: AlignmentDirectional.center,
-                            children: [
-                              Container(
-                                color: Colors.white,
-                                height: 60,
-                                width: 85,
-                              ),
-                              Container(
-                                child: Image.network(
-                                  imageProduct1,
+                    Container(color: Colors.grey[300], width: 75, height: 60),
+                    Column(
+                      children: [
+                        Stack(
+                          alignment: AlignmentDirectional.center,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.only(top: 5),
+                              child:  Container(
+                                child: Image.asset(
+                                   imageProduct1,
                                   fit: BoxFit.cover,
-                                  width: 80,
-                                  height: 55,
+                                   width: 70,
+                                  height: 80,
                                 ),
                               ),
-                            ],
-                          ),
-                          Text(
-                            'Mascara',
+                            ),
+                          ],
+                        ),
+                        Container(
+                          width: 70,
+                          child: Text(
+                            nameProduct1,
                             style: Theme.of(context)
                                 .textTheme
                                 .headline3
                                 ?.copyWith(fontSize: 20),
+                            maxLines: 2,
                           ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
                   ],
                 ),
                 Stack(
                   alignment: AlignmentDirectional.topStart,
                   children: [
-                    Container(color: Colors.grey[300], width: 90, height: 60),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 10, left: 5),
-                      child: Column(
-                        children: [
-                          Stack(
-                            alignment: AlignmentDirectional.center,
-                            children: [
-                              Container(
-                                color: Colors.white,
-                                height: 60,
-                                width: 85,
-                              ),
-                              Container(
-                                child: Image.network(
+                    Container(color: Colors.grey[300], width: 75, height: 60),
+                    Column(
+                      children: [
+                        Stack(
+                          alignment: AlignmentDirectional.center,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.only(top: 5),
+                              child: Container(
+                                child: Image.asset(
                                   imageProduct2,
                                   fit: BoxFit.cover,
-                                  width: 80,
-                                  height: 55,
+                                  width: 70,
+                                  height: 80,
                                 ),
                               ),
-                            ],
-                          ),
-                          Text(
-                            'Mascara',
-                            style: Theme.of(context)
-                                .textTheme
-                                .headline3
-                                ?.copyWith(fontSize: 20),
-                          ),
-                        ],
-                      ),
+                            ),
+                          ],
+                        ),
+                        Text(
+                          nameProduct2,
+                          style: Theme.of(context)
+                              .textTheme
+                              .headline3
+                              ?.copyWith(fontSize: 20),
+                        ),
+                      ],
                     ),
                   ],
                 ),
                 Stack(
                   alignment: AlignmentDirectional.topStart,
                   children: [
-                    Container(color: Colors.grey[300], width: 90, height: 60),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 10, left: 5),
-                      child: Column(
-                        children: [
-                          Stack(
-                            alignment: AlignmentDirectional.center,
-                            children: [
-                              Container(
-                                color: Colors.white,
-                                height: 60,
-                                width: 85,
-                              ),
-                              Container(
-                                child: Image.network(
+                    Container(color: Colors.grey[300], width: 75, height: 60),
+                    Column(
+                      children: [
+                        Stack(
+                          alignment: AlignmentDirectional.center,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.only(top: 5),
+                              child: Container(
+                                child: Image.asset(
                                   imageProduct3,
                                   fit: BoxFit.cover,
-                                  width: 80,
-                                  height: 55,
+                                  width: 70,
+                                  height: 80,
                                 ),
                               ),
-                            ],
-                          ),
-                          Text(
-                            'Mascara',
+                            ),
+                          ],
+                        ),
+                        Container(
+                          width: 70,
+                          child: Text(
+                            nameProduct3,
                             style: Theme.of(context)
                                 .textTheme
                                 .headline3
                                 ?.copyWith(fontSize: 20),
                           ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
                   ],
                 ),
