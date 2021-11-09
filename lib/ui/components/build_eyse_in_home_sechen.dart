@@ -8,11 +8,14 @@ class BuildEyseInSection extends StatelessWidget {
       imageCategory:
           'https://image.freepik.com/free-photo/front-view-close-up-female-eye-with-brown-eyeshadow-make-up_186202-1324.jpg',
       imageProduct1:
-          'https://image.freepik.com/free-psd/bamboo-mascara-mockup-falling_1332-10109.jpg',
+          'assets/images/face1.png',
       imageProduct2:
-          'https://image.freepik.com/free-psd/bamboo-mascara-mockup-falling_1332-10109.jpg',
-      imageProduct3:
-          'https://image.freepik.com/free-psd/bamboo-mascara-mockup-falling_1332-10109.jpg',
+          'assets/images/face1.png',
+      imageProduct3: 'assets/images/face1.png',
+      nameCategory: 'Eyse',
+      nameProduct1: 'hdfkdkf',
+      nameProduct2: 'odfhjv',
+      nameProduct3: 'dfbksd',
     );
   }
 }
