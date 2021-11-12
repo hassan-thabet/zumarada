@@ -12,10 +12,7 @@ class BeautyTipsWidget extends StatelessWidget {
         height: 250,
         width: double.infinity,
         clipBehavior: Clip.antiAlias,
-        child: Image.network(
-          'https://image.freepik.com/free-photo/joyful-girl-with-face-mask-surprise-green-eyed-woman-posing-white-wall-after-washing-her-hair_197531-13982.jpg',
-          fit: BoxFit.cover,
-        ),
+        child:FadeInImage.assetNetwork(placeholder: 'assets/images/loding.gif', image:'https://image.freepik.com/free-photo/joyful-girl-with-face-mask-surprise-green-eyed-woman-posing-white-wall-after-washing-her-hair_197531-13982.jpg', fit: BoxFit.cover,)
       ),
     );
   }

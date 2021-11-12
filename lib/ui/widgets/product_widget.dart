@@ -25,7 +25,7 @@ class ProductWidget extends StatelessWidget {
                   height: 170,
                   width: 170,
                   fit: BoxFit.cover,
-                  placeholder: 'assets/images/9.jpg',
+                  placeholder: 'assets/images/loding.gif',
                   image: product.image),
               SizedBox(
                 height: 5,
