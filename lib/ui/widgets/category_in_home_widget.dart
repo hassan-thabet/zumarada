@@ -51,12 +51,9 @@ class CategoryInHomeWidget extends StatelessWidget {
                             width: 250,
                           ),
                           Container(
-                            child: Image.network(
-                              imageCategory,
-                              fit: BoxFit.cover,
+                            child: FadeInImage.assetNetwork(placeholder: 'assets/images/loding.gif', image:imageCategory, fit: BoxFit.cover,
                               width: 244,
-                              height: 124,
-                            ),
+                              height: 124,)
                           ),
                         ],
                       ),

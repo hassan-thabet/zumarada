@@ -13,11 +13,10 @@ class ProductSaleWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(5.0),
-      child: InkWell(
-        onTap: () => Navigator.of(context).push(MaterialPageRoute(
-            builder: (_) => ProductDetails(product: product))),
+    return InkWell(
+      onTap: () => Navigator.of(context).push(
+          MaterialPageRoute(builder: (_) => ProductDetails(product: product))),
+      child: Card(
         child: Container(
           width: 175,
           color: Colors.white70,
@@ -28,7 +27,8 @@ class ProductSaleWidget extends StatelessWidget {
                   height: 170,
                   width: 170,
                   fit: BoxFit.cover,
-                  placeholder: 'assets/images/9.jpg',
+                  
+                  placeholder: 'assets/images/loding.gif',
                   image: product.image),
               SizedBox(
                 height: 5,

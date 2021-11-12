@@ -20,7 +20,7 @@ class BrandWidget extends StatelessWidget {
                   color: Colors.black12),
               child: FadeInImage.assetNetwork(
                   fit: BoxFit.cover,
-                  placeholder: 'assets/images/9.jpg',
+                  placeholder: 'assets/images/loding.gif',
                   image: brand.brandIcon)),
         ),
         Text(brand.brandName,
