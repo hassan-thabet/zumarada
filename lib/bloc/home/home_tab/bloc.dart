@@ -29,7 +29,6 @@ class HomeTabBloc extends Cubit<HomeTabStates> {
 
   void buttemFavorit() {
     buttemfavorit = !buttemfavorit;
-
     emit(HomeTabButtemFavorit());
   }
 
