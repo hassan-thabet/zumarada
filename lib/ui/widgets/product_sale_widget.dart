@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:zumarada/bloc/home/home_tab/bloc.dart';
 import 'package:zumarada/models/product.dart';
@@ -47,6 +49,20 @@ class ProductSaleWidget extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
+                    Column(
+                      children: [
+                        Text(
+                          'SALE',
+                          style: TextStyle(fontSize: 10, color: Colors.red),
+                        ),
+                        Text(
+                          product.price + ' EGP ',
+                          style: TextStyle(
+                              fontSize: 10,
+                              decoration: TextDecoration.lineThrough),
+                        ),
+                      ],
+                    ),
                     Text(
                       product.price + ' EGP',
                       style: Theme.of(context).textTheme.bodyText1,
