@@ -51,10 +51,13 @@ class CategoryInHomeWidget extends StatelessWidget {
                             width: 250,
                           ),
                           Container(
-                            child: FadeInImage.assetNetwork(placeholder: 'assets/images/loding.gif', image:imageCategory, fit: BoxFit.cover,
-                              width: 244,
-                              height: 124,)
-                          ),
+                              child: FadeInImage.assetNetwork(
+                            placeholder: 'assets/images/loding.gif',
+                            image: imageCategory,
+                            fit: BoxFit.cover,
+                            width: 244,
+                            height: 124,
+                          )),
                         ],
                       ),
                       Text(
@@ -83,11 +86,11 @@ class CategoryInHomeWidget extends StatelessWidget {
                           children: [
                             Padding(
                               padding: const EdgeInsets.only(top: 5),
-                              child:  Container(
+                              child: Container(
                                 child: Image.asset(
-                                   imageProduct1,
+                                  imageProduct1,
                                   fit: BoxFit.cover,
-                                   width: 70,
+                                  width: 70,
                                   height: 80,
                                 ),
                               ),
