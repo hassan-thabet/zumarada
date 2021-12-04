@@ -23,6 +23,7 @@ class CategoryWidget extends StatelessWidget {
               image,
               height: 30,
               width: 30,
+              //kdsjfsjdafkljksdfj
             ),
           ),
           SizedBox(
