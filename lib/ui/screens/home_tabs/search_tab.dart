@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:zumarada/constants/my_colors.dart';
 import 'package:zumarada/ui/components/build_categoryAyseInSaerch_section.dart';
 import 'package:zumarada/ui/components/build_categoryBrushInSaerch_section.dart';
 import 'package:zumarada/ui/components/build_categoryFaceInSaerch_section.dart';
@@ -7,7 +6,6 @@ import 'package:zumarada/ui/components/build_categoryLipsInSaerch_section.dart';
 import 'package:zumarada/ui/components/build_categoryToolsInSaerch_section.dart';
 import 'package:zumarada/ui/components/build_search_section.dart';
 
-import '../category_screen.dart';
 
 class SearchTab extends StatelessWidget {
   @override
