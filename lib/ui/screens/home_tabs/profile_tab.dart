@@ -14,7 +14,6 @@ class ProfileTab extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 15),
         child: Column(
-          //crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             MaterialButton(
               onPressed: () => heroScreenPage(context),
@@ -25,8 +24,7 @@ class ProfileTab extends StatelessWidget {
                   backgroundImage: NetworkImage(
                       'https://images.pexels.com/photos/388517/pexels-photo-388517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'),
                   backgroundColor: LIGHT_MAIN_COLOR,
-                  // child: Image.network(
-                  //     'https://images.pexels.com/photos/388517/pexels-photo-388517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'),
+                 
                 ),
               ),
             ),
