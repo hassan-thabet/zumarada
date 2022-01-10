@@ -19,26 +19,25 @@ class CategoryScreen extends StatelessWidget {
                 style: Theme.of(context).textTheme.headline3,
               ),
             ),
-            body: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: SingleChildScrollView(
+            body: SingleChildScrollView(
+              primary: true,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
                 child: Column(
                   children: [
                     BuildSearchSection(),
-
                     GridView.count(
                       crossAxisCount: 2,
-                      childAspectRatio: 1 / 1.6,
+                      childAspectRatio: 1 / 1.7,
                       shrinkWrap: true,
                       children: List.generate(
                           SearchCategoreBloc.get(context).products.length,
                           (index) => ProductWidget(
-                            product: HomeTabBloc.get(context).products[index],
-                            favoritonTab: () {
-                            },
-                          )),
+                                product:
+                                    HomeTabBloc.get(context).products[index],
+                                favoritonTab: () {},
+                              )),
                     ),
-
                   ],
                 ),
               ),
