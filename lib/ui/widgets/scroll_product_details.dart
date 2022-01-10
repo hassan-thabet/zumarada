@@ -1,3 +1,6 @@
+import 'dart:ffi';
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:zumarada/constants/my_colors.dart';
 import 'package:zumarada/models/product.dart';
@@ -17,6 +20,7 @@ bool descVisibile = false;
 class _ScrollProductDetailsState extends State<ScrollProductDetails> {
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
     return DraggableScrollableSheet(
       initialChildSize: 0.30,
       minChildSize: 0.30,
@@ -53,18 +57,24 @@ class _ScrollProductDetailsState extends State<ScrollProductDetails> {
                       ),
                       Row(
                         children: [
-                          Container(
-                            width: 300,
-                            child: Text(
-                              widget.product.title,
-                              maxLines: 2,
-                              overflow: TextOverflow.ellipsis,
-                              style: Theme.of(context).textTheme.headline3,
+                          Expanded(
+                            flex: 4,
+                            child: Container(
+                              width: 200,
+                              child: Text(
+                                widget.product.title,
+                                maxLines: 2,
+                                overflow: TextOverflow.ellipsis,
+                                style: Theme.of(context).textTheme.headline3,
+                              ),
                             ),
                           ),
-                          Text(
-                            widget.product.price + ' EGP',
-                            style: Theme.of(context).textTheme.bodyText1,
+                          Expanded(
+                            flex: 1,
+                            child: Text(
+                              widget.product.price + ' EGP',
+                              style: Theme.of(context).textTheme.bodyText1,
+                            ),
                           ),
                         ],
                       ),

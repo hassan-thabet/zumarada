@@ -42,7 +42,7 @@ class FavoriteWidget extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Container(
-                          width: 251,
+                          width: 222,
                           child: Text(
                             'A silkylightweight matte moisturizerdcjbjlsfhvjl ',
                             maxLines: 2,
