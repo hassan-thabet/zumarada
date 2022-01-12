@@ -1,4 +1,3 @@
-import 'dart:ffi';
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
@@ -20,7 +19,6 @@ bool descVisibile = false;
 class _ScrollProductDetailsState extends State<ScrollProductDetails> {
   @override
   Widget build(BuildContext context) {
-    double width = MediaQuery.of(context).size.width;
     return DraggableScrollableSheet(
       initialChildSize: 0.30,
       minChildSize: 0.30,

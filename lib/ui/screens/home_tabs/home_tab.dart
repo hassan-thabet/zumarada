@@ -17,7 +17,6 @@ import 'package:zumarada/ui/widgets/beauty_tips_widget.dart';
 class HomeTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
     return BlocBuilder<HomeTabBloc, HomeTabStates>(builder: (context, state) {
       return SafeArea(
         child: Scaffold(
