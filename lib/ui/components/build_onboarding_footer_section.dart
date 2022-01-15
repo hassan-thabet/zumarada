@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:zumarada/bloc/onboarding/onboarding_bloc.dart';
 import 'package:zumarada/bloc/onboarding/onboarding_states.dart';
+import 'package:zumarada/constants/my_colors.dart';
 import 'package:zumarada/ui/widgets/onboarding_indicator_widget.dart';
 
 class BuildOnBoardingFooterSection extends StatelessWidget {
@@ -11,13 +12,31 @@ class BuildOnBoardingFooterSection extends StatelessWidget {
     return BlocBuilder<OnBoardingBloc, OnBoardingStates>(
         builder: (context, state) {
       return Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 12),
+        padding: const EdgeInsets.symmetric(horizontal: 0),
         child: Container(
           height: size.height * 0.10,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
+              (OnBoardingBloc.get(context).pageIndex == 0)
+                  ? InkWell(
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text('SKIP',
+                            style: Theme.of(context).textTheme.button),
+                      ),
+                      onTap: () {
+                        OnBoardingBloc.get(context).onPageChange(2);
+                      })
+                  : Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text('SKIP',
+                          style: Theme.of(context)
+                              .textTheme
+                              .button!
+                              .copyWith(color: SCAFFOLD_BACKGROUND_COLOR))),
+              Spacer(),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Row(
@@ -37,6 +56,7 @@ class BuildOnBoardingFooterSection extends StatelessWidget {
                   ],
                 ),
               ),
+              Spacer(),
               (OnBoardingBloc.get(context).pageIndex == 2)
                   ? InkWell(
                       child: Padding(
@@ -50,14 +70,16 @@ class BuildOnBoardingFooterSection extends StatelessWidget {
                   : InkWell(
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child: Text('NEXT',
-                            style: Theme.of(context).textTheme.button),
+                        child: Text(
+                          'NEXT',
+                          style: Theme.of(context).textTheme.button,
+                        ),
                       ),
                       onTap: () {
                         OnBoardingBloc.get(context).nextPageChange(
                             OnBoardingBloc.get(context).pageIndex);
                       },
-                    ),
+                    )
             ],
           ),
         ),

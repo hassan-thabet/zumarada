@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:zumarada/bloc/home/cart_tab/bloc.dart';
+import 'package:zumarada/bloc/home/cart_tab/states.dart';
 import 'package:zumarada/constants/my_colors.dart';
 import 'package:zumarada/models/product.dart';
 
 class ItemWidgetInCart extends StatelessWidget {
   ItemWidgetInCart({required this.product});
   late final Product product;
-  int a = 1;
+
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -19,12 +22,12 @@ class ItemWidgetInCart extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      FadeInImage.assetNetwork(
-                          height: 60,
-                          width: 60,
-                          fit: BoxFit.cover,
-                          placeholder: 'assets/images/loding.gif',
-                          image: product.image),
+                      // FadeInImage.assetNetwork(
+                      //     height: 60,
+                      //     width: 60,
+                      //     fit: BoxFit.cover,
+                      //     placeholder: 'assets/images/loding.gif',
+                      //     image: product.image),
                       Expanded(
                         flex: 3,
                         child: Container(
@@ -65,33 +68,41 @@ class ItemWidgetInCart extends StatelessWidget {
                       Expanded(
                         flex: 1,
                         child: Container(
-                          height: 20,
-                          width: 80,
-                          decoration: BoxDecoration(
-                              color: Colors.grey[200],
-                              borderRadius: BorderRadius.circular(20)),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children: [
-                              InkWell(
-                                child: Icon(
-                                  Icons.add,
-                                  size: 14,
-                                ),
-                              ),
-                              Text(
-                                "$a",
-                                style: TextStyle(fontSize: 20),
-                              ),
-                              InkWell(
-                                child: Icon(
-                                  Icons.remove,
-                                  size: 14,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
+                            height: 20,
+                            width: 80,
+                            decoration: BoxDecoration(
+                                color: Colors.grey[200],
+                                borderRadius: BorderRadius.circular(20)),
+                            child: BlocBuilder<CartTabBloc, CartTabStates>(
+                                builder: (context, state) {
+                              return Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceAround,
+                                children: [
+                                  InkWell(
+                                      child: Icon(
+                                        Icons.add,
+                                        size: 14,
+                                      ),
+                                      onTap: () {
+                                        CartTabBloc.get(context).increment();
+                                      }),
+                                  Text(
+                                    product.price,
+                                    style: TextStyle(fontSize: 20),
+                                  ),
+                                  InkWell(
+                                    child: Icon(
+                                      Icons.remove,
+                                      size: 14,
+                                    ),
+                                    onTap: () {
+                                      CartTabBloc.get(context).decrement();
+                                    },
+                                  ),
+                                ],
+                              );
+                            })),
                       ),
                       SizedBox(
                         width: 10,
