@@ -11,6 +11,6 @@ class CartTab extends StatelessWidget {
             style: Theme.of(context).textTheme.headline3,
           ),
         ),
-        body: BulidCartSection());
+        body: BuildCartSection());
   }
 }

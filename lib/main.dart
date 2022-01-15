@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:zumarada/bloc/home/bloc.dart';
+import 'package:zumarada/bloc/home/cart_tab/bloc.dart';
 import 'package:zumarada/bloc/onboarding/onboarding_bloc.dart';
 import 'package:zumarada/bloc/signup/signup_bloc.dart';
 import 'package:zumarada/ui/screens/beaty_tips_screen.dart';
@@ -41,6 +42,7 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (context) => OnBoardingBloc()),
         BlocProvider(create: (context) => SignUpBloc()),
         BlocProvider(create: (context) => HomeBloc()),
+        BlocProvider(create: (context) => CartTabBloc()),
         BlocProvider(
             create: (context) => HomeTabBloc()
               ..getProducts()

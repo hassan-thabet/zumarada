@@ -16,8 +16,10 @@ class CartWidget extends StatelessWidget {
             thickness: 2,
             color: BUTTON_COLOR,
           ),
+
+          Spacer(),
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.symmetric(horizontal: 12.0 , vertical: 6),
             child: Row(
               children: [
                 Text(
@@ -33,13 +35,12 @@ class CartWidget extends StatelessWidget {
               ],
             ),
           ),
-          Spacer(),
           CustomButtonWidget(
             onTap: () {},
-            text: 'Chikout',
+            text: 'Checkout',
           ),
           SizedBox(
-            height: 20,
+            height: 10,
           )
         ],
       ),
